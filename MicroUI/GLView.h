@@ -33,4 +33,10 @@
 
 - (GLView *)hitTestForTouchAtPoint:(CGPoint)point;
 
+- (void)onTouchStart:(UITouch*)touch atPoint:(CGPoint)point;
+
+- (void)onTouchMove:(UITouch*)touch atPoint:(CGPoint)point;
+
+- (void)onTouchEnd:(UITouch*)touch atPoint:(CGPoint)point;
+
 @end

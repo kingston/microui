@@ -71,7 +71,6 @@
 
 - (GLView *)hitTestForTouchAtPoint:(CGPoint)point
 {
-    NSLog(@"%f, %f", point.x, point.y);
     if ([self hitTestForPoint:point]) {
         // Check if any subviews are in bounding box
         // reversed so that we get top most first
@@ -82,6 +81,22 @@
         return self;
     }
     return nil;
+}
+
+// by default, bubble event up to parent
+- (void)onTouchStart:(UITouch*)touch atPoint:(CGPoint)point
+{
+    if (parent != nil) [parent onTouchStart:touch atPoint:point];
+}
+
+- (void)onTouchEnd:(UITouch*)touch atPoint:(CGPoint)point
+{
+    if (parent != nil) [parent onTouchEnd:touch atPoint:point];
+}
+
+- (void)onTouchMove:(UITouch*)touch atPoint:(CGPoint)point
+{
+    if (parent != nil) [parent onTouchMove:touch atPoint:point];
 }
 
 @end

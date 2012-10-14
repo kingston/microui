@@ -107,11 +107,18 @@
 //Tells the receiver when one or more fingers touch down in a view or window.
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"touches began");
-    UITouch *touch = [touches anyObject];
-    GLView *view = [baseView hitTestForTouchAtPoint:[self getCoordinatesFromTouch:touch]];
-    if (view != nil) {
-        NSLog(@"Detected touch for %@", view);
+    for (UITouch *touch in touches)
+    {
+        CGPoint pt = [self getCoordinatesFromTouch:touch];
+        GLView *targettedView = [baseView hitTestForTouchAtPoint:pt];
+        [targettedView onTouchStart:touch atPoint:pt];
+        if (targettedView != nil) {
+            NSLog(@"Detected start of a touch for %@", targettedView);
+        }
+        
+        // Store touch
+        NSValue *key = [NSValue valueWithNonretainedObject:touch];
+        [liveTouches setObject:targettedView forKey:key];
     }
 }
 
@@ -119,24 +126,34 @@
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"touches cancelled");
-    UITouch *touch = [touches anyObject];
-    [baseView hitTestForTouchAtPoint:[self getCoordinatesFromTouch:touch]];
+    [self touchesEnded:touches withEvent:event];
 }
 
 //Tells the receiver when one or more fingers are raised from a view or window.
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"touches ended");
-    UITouch *touch = [touches anyObject];
-    [baseView hitTestForTouchAtPoint:[self getCoordinatesFromTouch:touch]];
+    for (UITouch *touch in touches)
+    {
+        NSValue *key = [NSValue valueWithNonretainedObject:touch];
+        GLView *targettedView = [liveTouches objectForKey:key];
+        [liveTouches removeObjectForKey:key];
+        CGPoint pt = [self getCoordinatesFromTouch:touch];
+        [targettedView onTouchEnd:touch atPoint:pt];
+    }
 }
 
 //Tells the receiver when one or more fingers associated with an event move within a view or window.
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"touches moved");
-    UITouch *touch = [touches anyObject];
-    [baseView hitTestForTouchAtPoint:[self getCoordinatesFromTouch:touch]];
+    for (UITouch *touch in touches)
+    {
+        NSValue *key = [NSValue valueWithNonretainedObject:touch];
+        GLView *targettedView = [liveTouches objectForKey:key];
+        CGPoint pt = [self getCoordinatesFromTouch:touch];
+        [targettedView onTouchMove:touch atPoint:pt];
+    }
 }
 
 @end

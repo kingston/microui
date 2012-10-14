@@ -13,6 +13,7 @@
 @interface GLViewController : GLKViewController <GLKViewDelegate, GLKViewControllerDelegate> {
     GLView *baseView;
     GLGraphicsContext *graphicsContext;
+    NSMutableDictionary *liveTouches;
 }
 
 - (void)setupBaseView;
