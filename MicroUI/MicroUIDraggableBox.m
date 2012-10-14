@@ -7,6 +7,7 @@
 //
 
 #import "MicroUIDraggableBox.h"
+#import "MicroUIDraggableContainer.h"
 
 @implementation MicroUIDraggableBox
 
@@ -14,35 +15,20 @@
 {
     self = [super initWithBoundingBox:box];
     if (self) {
-        currentTouch = nil;
+        boxView = [[GLBox alloc] initWithBoundingBox:box];
+        [self addSubView:boxView];
     }
     return self;
 }
 
-- (void)onTouchStart:(UITouch *)touch atPoint:(CGPoint)point
+- (GLKVector4)color
 {
-    if (currentTouch != nil) return; // ignore other touches
-    currentTouch = [NSValue valueWithNonretainedObject:touch];
-    dragStartBoxPosition = self.boundingBox.origin;
-    dragStartTouchPosition = point;
+    return [boxView color];
 }
 
-- (void)onTouchMove:(UITouch *)touch atPoint:(CGPoint)point
+- (void)setColor:(GLKVector4)color
 {
-    if ([currentTouch nonretainedObjectValue] != touch) return;
-    CGPoint newPt = dragStartBoxPosition;
-    newPt.x += point.x - dragStartTouchPosition.x;
-    newPt.y += point.y - dragStartTouchPosition.y;
-    
-    CGRect box = self.boundingBox;
-    box.origin = newPt;
-    self.boundingBox = box;
-}
-
-- (void)onTouchEnd:(UITouch *)touch atPoint:(CGPoint)point
-{
-    if ([currentTouch nonretainedObjectValue] != touch) return;
-    currentTouch = nil;
+    [boxView setColor:color];
 }
 
 @end

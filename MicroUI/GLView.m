@@ -44,7 +44,8 @@
     // By default, render a base shape if we are subclassing
     if ([self class] != [GLView class]) {
         GLShape *baseShape = [[GLShape alloc] init];
-        baseShape.position = GLKVector2Make(boundingBox.origin.x, boundingBox.origin.y);
+        CGRect absBox = self.absoluteBoundingBox;
+        baseShape.position = GLKVector2Make(absBox.origin.x, absBox.origin.y);
         [self renderToShape:baseShape];
         [baseShape renderWithContext:context];
     }
@@ -66,7 +67,7 @@
 
 - (BOOL)hitTestForPoint:(CGPoint)point
 {
-    return CGRectContainsPoint(self.boundingBox, point);
+    return CGRectContainsPoint(self.absoluteBoundingBox, point);
 }
 
 - (GLView *)hitTestForTouchAtPoint:(CGPoint)point
@@ -97,6 +98,17 @@
 - (void)onTouchMove:(UITouch*)touch atPoint:(CGPoint)point
 {
     if (parent != nil) [parent onTouchMove:touch atPoint:point];
+}
+
+- (CGRect)absoluteBoundingBox
+{
+    CGRect box = boundingBox;
+    if (parent != nil) {
+        CGPoint parentOrigin = [parent absoluteBoundingBox].origin;
+        CGPoint origin = box.origin;
+        box.origin = CGPointMake(parentOrigin.x + origin.x, parentOrigin.y + origin.y);
+    }
+    return box;
 }
 
 @end

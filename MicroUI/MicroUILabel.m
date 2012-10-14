@@ -83,10 +83,6 @@
     } else {
         [rect setTexture: cachedTexture];
     }
-    rect.textureCoordinates[0] = GLKVector2Make(0,0);
-    rect.textureCoordinates[1] = GLKVector2Make(1,0);
-    rect.textureCoordinates[2] = GLKVector2Make(1,1);
-    rect.textureCoordinates[3] = GLKVector2Make(0,1);
     [shape addChild:rect];
 }
 @end

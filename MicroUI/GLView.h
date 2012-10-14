@@ -13,7 +13,7 @@
 
 @interface GLView : NSObject
 
-@property (nonatomic)CGRect boundingBox;
+@property (nonatomic)CGRect boundingBox; // NB: Bounding box is relative to parent view
 @property (nonatomic, weak)GLView *parent;
 @property (nonatomic, readonly, strong)NSMutableArray *subviews;
 
@@ -28,6 +28,8 @@
 - (void)renderToShape:(GLShape*)shape;
 
 - (void)addSubView:(GLView*)view;
+
+- (CGRect)absoluteBoundingBox;
 
 - (BOOL)hitTestForPoint:(CGPoint)point;
 

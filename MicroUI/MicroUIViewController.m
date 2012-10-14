@@ -10,7 +10,9 @@
 #import "GLBox.h"
 #import "MicroUILabel.h"
 #import "MicroUIDraggableBox.h"
+#import "MicroUIDraggableContainer.h"
 #import "MicroUIButton.h"
+#import "MicroUIImage.h"
 
 @interface MicroUIViewController ()
 
@@ -19,9 +21,12 @@
 @implementation MicroUIViewController
 - (void)setupSubViews:(GLView*)container
 {
-    MicroUIDraggableBox *box = [[MicroUIDraggableBox alloc] initWithBoundingBox:CGRectMake(100, 100, 100, 100)];
+    MicroUIDraggableContainer *dragContainer = [[MicroUIDraggableContainer alloc] initWithBoundingBox:CGRectMake(50, 50, 300, 300)];
+    [container addSubView:dragContainer];
+    
+    MicroUIDraggableBox *box = [[MicroUIDraggableBox alloc] initWithBoundingBox:CGRectMake(0, 0, 100, 100)];
     [box setColor:GLKVector4Make(1.0, 0.0, 0.0, 1.0)];
-    [container addSubView:box];
+    [dragContainer addSubView:box];
     
     MicroUILabel *text = [[MicroUILabel alloc] initWithX:100 AndY:300 AndWidth:200 AndHeight:50];
     text.isCentered = YES;
@@ -32,6 +37,10 @@
     MicroUIButton *button = [[MicroUIButton alloc] initWithX:100 AndY:400 AndWidth:200 AndHeight:50];
     [button setButtonText:@"touch me"];
     [container addSubView:button];
+    
+    MicroUIImage *image = [[MicroUIImage alloc] initWithX:100 AndY:200 AndWidth:100 AndHeight:100];
+    [image setImage:[UIImage imageNamed:@"avatar.jpeg"]];
+    [container addSubView:image];
 }
 
 - (void)viewDidLoad
