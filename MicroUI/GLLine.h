@@ -10,6 +10,7 @@
 
 @interface GLLine : GLShape
 
-@property (nonatomic) float length;
+@property (nonatomic) CGPoint start;
+@property (nonatomic) CGPoint end;
 
 @end

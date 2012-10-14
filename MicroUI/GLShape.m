@@ -114,6 +114,7 @@
         if (self.numVertices >= 3) {
             glDrawArrays(GL_TRIANGLE_FAN, 0, self.numVertices);
         } else if (self.numVertices == 2) {
+            glLineWidth(5.);
             glDrawArrays(GL_LINE_STRIP, 0, self.numVertices);
         }
         

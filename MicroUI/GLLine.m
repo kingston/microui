@@ -10,7 +10,8 @@
 
 @implementation GLLine
 
-@synthesize length = _length;
+@synthesize start = _start;
+@synthesize end = _end;
 
 - (int)numVertices
 {
@@ -19,13 +20,19 @@
 
 - (void)updateVertices
 {
-    self.vertices[0] = GLKVector2Make(0, 0);
-    self.vertices[1] = GLKVector2Make(0, self.length);
+    self.vertices[0] = GLKVector2Make(self.start.x, self.start.y);
+    self.vertices[1] = GLKVector2Make(self.end.x, self.end.y);
 }
 
-- (void)setLength:(float)length
+- (void)setStart:(CGPoint)start
 {
-    _length = length;
+    _start = start;
+    [self updateVertices];
+}
+
+- (void)setEnd:(CGPoint)end
+{
+    _end = end;
     [self updateVertices];
 }
 

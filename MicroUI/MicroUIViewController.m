@@ -13,6 +13,7 @@
 #import "MicroUIDraggableContainer.h"
 #import "MicroUIButton.h"
 #import "MicroUIImage.h"
+#import "MicroUIDraggableLine.h"
 
 @interface MicroUIViewController ()
 
@@ -41,6 +42,12 @@
     MicroUIImage *image = [[MicroUIImage alloc] initWithX:100 AndY:200 AndWidth:100 AndHeight:100];
     [image setImage:[UIImage imageNamed:@"avatar.jpeg"]];
     [container addSubView:image];
+    
+    MicroUIDraggableLine *line = [[MicroUIDraggableLine alloc] initWithBoundingBox:CGRectMake(100, 100, 100, 100)];
+    line.startPoint = CGPointMake(0, 0);
+    line.endPoint = CGPointMake(100, 100);
+    [line setColor:GLKVector4Make(0., 0., 0., 1.)];
+    [container addSubView:line];
 }
 
 - (void)viewDidLoad

@@ -17,4 +17,6 @@
 @property(nonatomic) CGPoint startPoint;
 @property(nonatomic) CGPoint endPoint;
 
+@property (nonatomic)GLKVector4 color;
+
 @end
