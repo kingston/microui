@@ -29,6 +29,7 @@
 		D035A87C162A9BFA000467EB /* GLBox.m in Sources */ = {isa = PBXBuildFile; fileRef = D035A87B162A9BFA000467EB /* GLBox.m */; };
 		D0796BCE162AB20C00534988 /* MicroUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D0796BCD162AB20C00534988 /* MicroUILabel.m */; };
 		D0796BF1162ACA6E00534988 /* MicroUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D0796BF0162ACA6E00534988 /* MicroUIButton.m */; };
+		D0796BF4162AD31600534988 /* MicroUIDraggableBox.m in Sources */ = {isa = PBXBuildFile; fileRef = D0796BF3162AD31600534988 /* MicroUIDraggableBox.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,8 @@
 		D0796BCD162AB20C00534988 /* MicroUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroUILabel.m; sourceTree = "<group>"; };
 		D0796BEF162ACA6E00534988 /* MicroUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroUIButton.h; sourceTree = "<group>"; };
 		D0796BF0162ACA6E00534988 /* MicroUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroUIButton.m; sourceTree = "<group>"; };
+		D0796BF2162AD31600534988 /* MicroUIDraggableBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroUIDraggableBox.h; sourceTree = "<group>"; };
+		D0796BF3162AD31600534988 /* MicroUIDraggableBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroUIDraggableBox.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +161,8 @@
 				D0796BCD162AB20C00534988 /* MicroUILabel.m */,
 				D0796BEF162ACA6E00534988 /* MicroUIButton.h */,
 				D0796BF0162ACA6E00534988 /* MicroUIButton.m */,
+				D0796BF2162AD31600534988 /* MicroUIDraggableBox.h */,
+				D0796BF3162AD31600534988 /* MicroUIDraggableBox.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 				D035A87C162A9BFA000467EB /* GLBox.m in Sources */,
 				D0796BCE162AB20C00534988 /* MicroUILabel.m in Sources */,
 				D0796BF1162ACA6E00534988 /* MicroUIButton.m in Sources */,
+				D0796BF4162AD31600534988 /* MicroUIDraggableBox.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import "MicroUIViewController.h"
 #import "GLBox.h"
 #import "MicroUILabel.h"
+#import "MicroUIDraggableBox.h"
 #import "MicroUIButton.h"
 
 @interface MicroUIViewController ()
@@ -18,7 +19,7 @@
 @implementation MicroUIViewController
 - (void)setupSubViews:(GLView*)container
 {
-    GLBox *box = [[GLBox alloc] initWithBoundingBox:CGRectMake(100, 100, 100, 100)];
+    MicroUIDraggableBox *box = [[MicroUIDraggableBox alloc] initWithBoundingBox:CGRectMake(100, 100, 100, 100)];
     [box setColor:GLKVector4Make(1.0, 0.0, 0.0, 1.0)];
     [container addSubView:box];
     
