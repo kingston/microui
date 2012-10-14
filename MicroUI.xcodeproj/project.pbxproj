@@ -35,6 +35,7 @@
 		D0AED1A9162B659100CFA62D /* MicroUIDraggableLine.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AED1A8162B659100CFA62D /* MicroUIDraggableLine.m */; };
 		D0AED1AC162B65F500CFA62D /* MicroUIDraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AED1AB162B65F500CFA62D /* MicroUIDraggableView.m */; };
 		D0AED1AF162B697900CFA62D /* MicroUIDraggableEndpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AED1AE162B697900CFA62D /* MicroUIDraggableEndpoint.m */; };
+		D0AED1B3162B752800CFA62D /* GLQuad.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AED1B2162B752800CFA62D /* GLQuad.m */; };
 		D0FD3DB1162B5E99000D61E2 /* MicroUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FD3DB0162B5E99000D61E2 /* MicroUIImage.m */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,9 @@
 		D0AED1AB162B65F500CFA62D /* MicroUIDraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroUIDraggableView.m; sourceTree = "<group>"; };
 		D0AED1AD162B697900CFA62D /* MicroUIDraggableEndpoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroUIDraggableEndpoint.h; sourceTree = "<group>"; };
 		D0AED1AE162B697900CFA62D /* MicroUIDraggableEndpoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroUIDraggableEndpoint.m; sourceTree = "<group>"; };
+		D0AED1B0162B6CD700CFA62D /* MicroUIDraggableDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MicroUIDraggableDelegate.h; sourceTree = "<group>"; };
+		D0AED1B1162B752800CFA62D /* GLQuad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLQuad.h; sourceTree = "<group>"; };
+		D0AED1B2162B752800CFA62D /* GLQuad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLQuad.m; sourceTree = "<group>"; };
 		D0FD3DAF162B5E99000D61E2 /* MicroUIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroUIImage.h; sourceTree = "<group>"; };
 		D0FD3DB0162B5E99000D61E2 /* MicroUIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroUIImage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,6 +195,7 @@
 				D0AED1AB162B65F500CFA62D /* MicroUIDraggableView.m */,
 				D0AED1AD162B697900CFA62D /* MicroUIDraggableEndpoint.h */,
 				D0AED1AE162B697900CFA62D /* MicroUIDraggableEndpoint.m */,
+				D0AED1B0162B6CD700CFA62D /* MicroUIDraggableDelegate.h */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -204,6 +209,8 @@
 				D035A875162A934A000467EB /* GLGraphicsContext.m */,
 				D035A877162A9B26000467EB /* GLRectangle.h */,
 				D035A878162A9B26000467EB /* GLRectangle.m */,
+				D0AED1B1162B752800CFA62D /* GLQuad.h */,
+				D0AED1B2162B752800CFA62D /* GLQuad.m */,
 			);
 			name = Graphics;
 			sourceTree = "<group>";
@@ -293,6 +300,7 @@
 				D0AED1A9162B659100CFA62D /* MicroUIDraggableLine.m in Sources */,
 				D0AED1AC162B65F500CFA62D /* MicroUIDraggableView.m in Sources */,
 				D0AED1AF162B697900CFA62D /* MicroUIDraggableEndpoint.m in Sources */,
+				D0AED1B3162B752800CFA62D /* GLQuad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

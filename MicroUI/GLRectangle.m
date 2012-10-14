@@ -24,10 +24,6 @@
 
 @synthesize width, height;
 
--(int)numVertices {
-    return 4;
-}
-
 -(void)updateVertices {
     self.vertices[0] = GLKVector2Make(0, 0);
     self.vertices[1] = GLKVector2Make(width, 0);

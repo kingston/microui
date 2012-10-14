@@ -16,12 +16,13 @@
 @property (nonatomic)CGRect boundingBox; // NB: Bounding box is relative to parent view
 @property (nonatomic, weak)GLView *parent;
 @property (nonatomic, readonly, strong)NSMutableArray *subviews;
+@property (nonatomic)id delegate;
+@property (nonatomic)CGPoint position;
+@property (nonatomic)CGSize size;
 
 - (id)initWithX:(float)x AndY:(float)y AndWidth:(float)width AndHeight:(float)height;
 
 - (id)initWithBoundingBox:(CGRect)box;
-
-- (void)setPosition:(CGPoint)pt;
 
 - (void)updateWithController:(GLKViewController*)controller;
 
@@ -44,5 +45,9 @@
 - (void)onTouchEnd:(UITouch*)touch atPoint:(CGPoint)point;
 
 - (void)onLayoutChanged; // called when the position, width, or height is changed
+
+- (CGPoint)getRelativePointFromAbsolutePoint:(CGPoint)point;
+
+- (CGPoint)getAbsolutePointFromRelativePoint:(CGPoint)point;
 
 @end

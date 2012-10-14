@@ -1,15 +1,13 @@
 //
-//  GLRectangle.h
+//  GLQuad.h
 //  MicroUI
 //
 //  Created by Kingston Tam on 10/14/12.
 //  Copyright (c) 2012 KT & JF Inc. All rights reserved.
 //
 
-#import "GLQuad.h"
+#import "GLShape.h"
 
-@interface GLRectangle : GLQuad
-
-@property (nonatomic) float width, height;
+@interface GLQuad : GLShape
 
 @end
