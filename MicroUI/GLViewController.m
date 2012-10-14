@@ -65,6 +65,8 @@
 	// Do any additional setup after loading the view.
     [self setupOpenGL];
     [self setupBaseView];
+    
+    liveTouches = [[NSMutableDictionary alloc] init];
 }
 
 - (void)viewDidUnload

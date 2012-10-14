@@ -12,7 +12,7 @@
 
 @implementation MicroUILabel
 
-@synthesize text, font;
+@synthesize text, font, color;
 
 - (id)initWithBoundingBox:(CGRect)box
 {
@@ -47,7 +47,17 @@
     
     UIGraphicsPushContext(context);
     
-    [text drawInRect:CGRectMake(0, 0, self.boundingBox.size.width, self.boundingBox.size.height) withFont:font lineBreakMode:NSLineBreakByClipping alignment:NSTextAlignmentLeft];
+    float x = 0, y = 0;
+    CGSize boundingSize = self.boundingBox.size;
+    if (self.isCentered) {
+        CGSize size = [text sizeWithFont:font];
+        x = (boundingSize.width - size.width) / 2.0;
+        y = (boundingSize.height - size.height) / 2.0;
+    }
+    
+    [color set];
+    
+    [text drawInRect:CGRectMake(x, y, boundingSize.width, boundingSize.height) withFont:font lineBreakMode:NSLineBreakByClipping alignment:NSTextAlignmentLeft];
     
     UIGraphicsPopContext();
     

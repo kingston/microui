@@ -11,6 +11,6 @@
 
 @interface GLBox : GLView
 
-@property GLKVector4 color;
+@property (nonatomic)GLKVector4 color;
 
 @end

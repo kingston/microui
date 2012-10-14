@@ -16,6 +16,9 @@
 
 @property(nonatomic, copy) NSString *text;
 @property(nonatomic) UIFont *font;
+@property(nonatomic) UIColor *color;
+
+@property(nonatomic) BOOL isCentered;
 
 
 @end

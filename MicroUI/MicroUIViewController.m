@@ -9,6 +9,7 @@
 #import "MicroUIViewController.h"
 #import "GLBox.h"
 #import "MicroUILabel.h"
+#import "MicroUIButton.h"
 
 @interface MicroUIViewController ()
 
@@ -22,8 +23,14 @@
     [container addSubView:box];
     
     MicroUILabel *text = [[MicroUILabel alloc] initWithX:100 AndY:300 AndWidth:200 AndHeight:50];
+    text.isCentered = YES;
+    text.color = [UIColor redColor];
     [text setText:@"AAAHHH"];
     [container addSubView:text];
+    
+    MicroUIButton *button = [[MicroUIButton alloc] initWithX:100 AndY:400 AndWidth:200 AndHeight:50];
+    [button setButtonText:@"touch me"];
+    [container addSubView:button];
 }
 
 - (void)viewDidLoad
