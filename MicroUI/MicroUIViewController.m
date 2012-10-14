@@ -24,7 +24,7 @@
     MicroUIDraggableContainer *dragContainer = [[MicroUIDraggableContainer alloc] initWithBoundingBox:CGRectMake(50, 50, 300, 300)];
     [container addSubView:dragContainer];
     
-    MicroUIDraggableBox *box = [[MicroUIDraggableBox alloc] initWithBoundingBox:CGRectMake(100, 100, 100, 100)];
+    MicroUIDraggableBox *box = [[MicroUIDraggableBox alloc] initWithBoundingBox:CGRectMake(0, 0, 100, 100)];
     [box setColor:GLKVector4Make(1.0, 0.0, 0.0, 1.0)];
     [dragContainer addSubView:box];
     

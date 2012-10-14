@@ -15,50 +15,20 @@
 {
     self = [super initWithBoundingBox:box];
     if (self) {
-        currentTouch = nil;
+        boxView = [[GLBox alloc] initWithBoundingBox:box];
+        [self addSubView:boxView];
     }
     return self;
 }
 
-- (MicroUIDraggableContainer*)findDraggableContainer
+- (GLKVector4)color
 {
-    GLView *parent = [self parent];
-    while (parent != nil) {
-        if ([parent isKindOfClass:[MicroUIDraggableContainer class]]) return (MicroUIDraggableContainer*) parent;
-        parent = [parent parent];
-    }
-    return nil;
+    return [boxView color];
 }
 
-- (void)onTouchStart:(UITouch *)touch atPoint:(CGPoint)point
+- (void)setColor:(GLKVector4)color
 {
-    if (currentTouch != nil) return; // ignore other touches
-    currentTouch = [NSValue valueWithNonretainedObject:touch];
-    dragStartBoxPosition = self.boundingBox.origin;
-    dragStartTouchPosition = point;
-}
-
-- (void)onTouchMove:(UITouch *)touch atPoint:(CGPoint)point
-{
-    if ([currentTouch nonretainedObjectValue] != touch) return;
-    CGPoint newPt = dragStartBoxPosition;
-    
-    MicroUIDraggableContainer *container = [self findDraggableContainer];
-    // Only move it if it is within the container
-    if (!container || [container hitTestForPoint:point]) {
-        newPt.x += point.x - dragStartTouchPosition.x;
-        newPt.y += point.y - dragStartTouchPosition.y;
-    }
-    
-    CGRect box = self.boundingBox;
-    box.origin = newPt;
-    self.boundingBox = box;
-}
-
-- (void)onTouchEnd:(UITouch *)touch atPoint:(CGPoint)point
-{
-    if ([currentTouch nonretainedObjectValue] != touch) return;
-    currentTouch = nil;
+    [boxView setColor:color];
 }
 
 @end

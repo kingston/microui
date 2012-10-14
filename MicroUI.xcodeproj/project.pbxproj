@@ -31,6 +31,9 @@
 		D0796BF1162ACA6E00534988 /* MicroUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D0796BF0162ACA6E00534988 /* MicroUIButton.m */; };
 		D0796BF4162AD31600534988 /* MicroUIDraggableBox.m in Sources */ = {isa = PBXBuildFile; fileRef = D0796BF3162AD31600534988 /* MicroUIDraggableBox.m */; };
 		D0AED1A2162B61C100CFA62D /* avatar.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D0AED1A1162B61C100CFA62D /* avatar.jpeg */; };
+		D0AED1A6162B638200CFA62D /* MicroUIDraggableContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AED1A5162B638200CFA62D /* MicroUIDraggableContainer.m */; };
+		D0AED1A9162B659100CFA62D /* MicroUIDraggableLine.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AED1A8162B659100CFA62D /* MicroUIDraggableLine.m */; };
+		D0AED1AC162B65F500CFA62D /* MicroUIDraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AED1AB162B65F500CFA62D /* MicroUIDraggableView.m */; };
 		D0FD3DB1162B5E99000D61E2 /* MicroUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FD3DB0162B5E99000D61E2 /* MicroUIImage.m */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +76,12 @@
 		D0796BF2162AD31600534988 /* MicroUIDraggableBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroUIDraggableBox.h; sourceTree = "<group>"; };
 		D0796BF3162AD31600534988 /* MicroUIDraggableBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroUIDraggableBox.m; sourceTree = "<group>"; };
 		D0AED1A1162B61C100CFA62D /* avatar.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar.jpeg; sourceTree = "<group>"; };
+		D0AED1A4162B638200CFA62D /* MicroUIDraggableContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroUIDraggableContainer.h; sourceTree = "<group>"; };
+		D0AED1A5162B638200CFA62D /* MicroUIDraggableContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroUIDraggableContainer.m; sourceTree = "<group>"; };
+		D0AED1A7162B659100CFA62D /* MicroUIDraggableLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroUIDraggableLine.h; sourceTree = "<group>"; };
+		D0AED1A8162B659100CFA62D /* MicroUIDraggableLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroUIDraggableLine.m; sourceTree = "<group>"; };
+		D0AED1AA162B65F500CFA62D /* MicroUIDraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroUIDraggableView.h; sourceTree = "<group>"; };
+		D0AED1AB162B65F500CFA62D /* MicroUIDraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroUIDraggableView.m; sourceTree = "<group>"; };
 		D0FD3DAF162B5E99000D61E2 /* MicroUIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroUIImage.h; sourceTree = "<group>"; };
 		D0FD3DB0162B5E99000D61E2 /* MicroUIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroUIImage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,6 +180,12 @@
 				D0796BF3162AD31600534988 /* MicroUIDraggableBox.m */,
 				D0FD3DAF162B5E99000D61E2 /* MicroUIImage.h */,
 				D0FD3DB0162B5E99000D61E2 /* MicroUIImage.m */,
+				D0AED1A4162B638200CFA62D /* MicroUIDraggableContainer.h */,
+				D0AED1A5162B638200CFA62D /* MicroUIDraggableContainer.m */,
+				D0AED1A7162B659100CFA62D /* MicroUIDraggableLine.h */,
+				D0AED1A8162B659100CFA62D /* MicroUIDraggableLine.m */,
+				D0AED1AA162B65F500CFA62D /* MicroUIDraggableView.h */,
+				D0AED1AB162B65F500CFA62D /* MicroUIDraggableView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -269,6 +284,9 @@
 				D0796BF1162ACA6E00534988 /* MicroUIButton.m in Sources */,
 				D0796BF4162AD31600534988 /* MicroUIDraggableBox.m in Sources */,
 				D0FD3DB1162B5E99000D61E2 /* MicroUIImage.m in Sources */,
+				D0AED1A6162B638200CFA62D /* MicroUIDraggableContainer.m in Sources */,
+				D0AED1A9162B659100CFA62D /* MicroUIDraggableLine.m in Sources */,
+				D0AED1AC162B65F500CFA62D /* MicroUIDraggableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
