@@ -60,7 +60,7 @@
     [super viewDidUnload];
     
     if ([EAGLContext currentContext] != nil) {
-        //TODO: Destroy context?
+        [EAGLContext setCurrentContext:nil];
     }
 }
 

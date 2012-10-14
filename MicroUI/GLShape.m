@@ -44,7 +44,7 @@
 }
 
 -(GLKMatrix4)modelviewMatrix {
-    GLKMatrix4 modelviewMatrix =GLKMatrix4MakeTranslation(position.x, position.y, 0);
+    GLKMatrix4 modelviewMatrix = GLKMatrix4MakeTranslation(position.x, position.y, 0);
     
     if (parent != nil)
         modelviewMatrix = GLKMatrix4Multiply(parent.modelviewMatrix, modelviewMatrix);
@@ -89,9 +89,6 @@
             glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
             glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, 0, self.textureCoordinates);
         }
-        
-        // Draw our primitives!
-        glDrawArrays(GL_TRIANGLE_FAN, 0, self.numVertices);
         
         // Draw our primitives!
         glDrawArrays(GL_TRIANGLE_FAN, 0, self.numVertices);
