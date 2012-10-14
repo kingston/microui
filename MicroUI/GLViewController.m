@@ -33,9 +33,18 @@
     
     graphicsContext = [[GLGraphicsContext alloc] init];
     
-    // TODO: Update projection matrix on rotation
+    [self setupProjectionMatrix];
+}
+
+- (void)setupProjectionMatrix
+{
+    UIView *view = [self view];
     [graphicsContext setProjectionMatrix:GLKMatrix4MakeOrtho(0, view.bounds.size.width, 0, view.bounds.size.height, 1, -1)];
-    
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [self setupProjectionMatrix];
 }
 
 - (void)setupBaseView
