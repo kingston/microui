@@ -36,4 +36,14 @@
     [views addObject:view];
 }
 
+- (GLView *)hitTestForTouchAtPoint:(CGPoint)point
+{
+    NSLog(@"%f, %f", point.x, point.y);
+    for (GLView *view in views) {
+        CGRect boundingBox = view.boundingBox;
+        
+    }
+    return nil;
+}
+
 @end

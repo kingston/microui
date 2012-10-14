@@ -36,7 +36,7 @@
 {
     CGRect bounds = [[self view] bounds];
     baseView = [[GLContainerView alloc] initWithBoundingBox:bounds];
-    [self setupSubViews:(GLContainerView *)baseView];
+    [self setupSubViews:baseView];
 }
 
 - (void)setupSubViews:(GLContainerView*)container
@@ -79,6 +79,38 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//Tells the receiver when one or more fingers touch down in a view or window.
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"touches began");
+    UITouch *touch = [touches anyObject];
+    [baseView hitTestForTouchAtPoint:[touch locationInView:[self view]]];
+}
+
+//Sent to the receiver when a system event (such as a low-memory warning) cancels a touch event.
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"touches cancelled");
+    UITouch *touch = [touches anyObject];
+    [baseView hitTestForTouchAtPoint:[touch locationInView:[self view]]];
+}
+
+//Tells the receiver when one or more fingers are raised from a view or window.
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"touches ended");
+    UITouch *touch = [touches anyObject];
+    [baseView hitTestForTouchAtPoint:[touch locationInView:[self view]]];
+}
+
+//Tells the receiver when one or more fingers associated with an event move within a view or window.
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"touches moved");
+    UITouch *touch = [touches anyObject];
+    [baseView hitTestForTouchAtPoint:[touch locationInView:[self view]]];
 }
 
 @end

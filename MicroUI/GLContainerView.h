@@ -14,4 +14,6 @@
 
 - (void)addView:(GLView*)view;
 
+- (GLView *)hitTestForTouchAtPoint:(CGPoint)point;
+
 @end

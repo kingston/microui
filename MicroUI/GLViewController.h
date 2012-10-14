@@ -12,7 +12,7 @@
 #import "GLContainerView.h"
 
 @interface GLViewController : GLKViewController <GLKViewDelegate, GLKViewControllerDelegate> {
-    GLView *baseView;
+    GLContainerView *baseView;
 }
 
 - (void)setupBaseView;
