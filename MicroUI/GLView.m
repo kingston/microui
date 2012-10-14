@@ -32,6 +32,18 @@
     return self;
 }
 
+- (void)setBoundingBox:(CGRect)_boundingBox
+{
+    boundingBox = _boundingBox;
+    [self onLayoutChanged];
+}
+
+- (void)setPosition:(CGPoint)pt
+{
+    boundingBox.origin = pt;
+    [self onLayoutChanged];
+}
+
 - (void)updateWithController:(GLKViewController *)controller
 {
     [subviews makeObjectsPerformSelector:@selector(updateWithController:) withObject:controller];
@@ -109,6 +121,11 @@
         box.origin = CGPointMake(parentOrigin.x + origin.x, parentOrigin.y + origin.y);
     }
     return box;
+}
+
+- (void)onLayoutChanged
+{
+    // do nothing...
 }
 
 @end

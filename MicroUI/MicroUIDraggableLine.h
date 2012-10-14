@@ -6,8 +6,15 @@
 //  Copyright (c) 2012 KT & JF Inc. All rights reserved.
 //
 
-#import "GLView.h"
+#import "MicroUIDraggableView.h"
+#import "MicroUIDraggableEndpoint.h"
 
-@interface MicroUIDraggableLine : GLView
+@interface MicroUIDraggableLine : MicroUIDraggableView {
+    MicroUIDraggableEndpoint *start;
+    MicroUIDraggableEndpoint *end;
+}
+
+@property(nonatomic) CGPoint startPoint;
+@property(nonatomic) CGPoint endPoint;
 
 @end

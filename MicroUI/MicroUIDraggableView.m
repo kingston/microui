@@ -49,9 +49,7 @@
         newPt.y += point.y - dragStartTouchPosition.y;
     }
     
-    CGRect box = self.boundingBox;
-    box.origin = newPt;
-    self.boundingBox = box;
+    [self setPosition:newPt];
 }
 
 - (void)onTouchEnd:(UITouch *)touch atPoint:(CGPoint)point

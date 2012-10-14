@@ -31,10 +31,9 @@
     cachedTexture = nil;
 }
 
-- (void)setBoundingBox:(CGRect)boundingBox
+- (void)onLayoutChanged
 {
-    [super setBoundingBox:boundingBox];
-    
+    [super onLayoutChanged];
     // Reset cache if bounds are changed
     cachedTexture = nil;
 }

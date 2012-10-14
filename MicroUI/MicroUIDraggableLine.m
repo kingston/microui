@@ -7,7 +7,32 @@
 //
 
 #import "MicroUIDraggableLine.h"
+#define ENDPOINT_RADIUS 3
 
 @implementation MicroUIDraggableLine
+
+- (id)initWithBoundingBox:(CGRect)box
+{
+    self = [super initWithBoundingBox:box];
+    if (self) {
+        start = [[MicroUIDraggableEndpoint alloc] initWithX:0 AndY:0 AndWidth:ENDPOINT_RADIUS AndHeight:ENDPOINT_RADIUS];
+        end = [[MicroUIDraggableEndpoint alloc] initWithX:0 AndY:0 AndWidth:ENDPOINT_RADIUS AndHeight:ENDPOINT_RADIUS];
+    }
+    return self;
+}
+
+@synthesize startPoint, endPoint;
+
+- (void)setStartPoint:(CGPoint)_startPoint
+{
+    startPoint = _startPoint;
+    [start setPosition:_startPoint];
+}
+
+- (void)setEndPoint:(CGPoint)_endPoint
+{
+    endPoint = _endPoint;
+    [end setPosition:_endPoint];
+}
 
 @end

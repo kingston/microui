@@ -21,6 +21,8 @@
 
 - (id)initWithBoundingBox:(CGRect)box;
 
+- (void)setPosition:(CGPoint)pt;
+
 - (void)updateWithController:(GLKViewController*)controller;
 
 - (void)render:(GLGraphicsContext*)context;
@@ -40,5 +42,7 @@
 - (void)onTouchMove:(UITouch*)touch atPoint:(CGPoint)point;
 
 - (void)onTouchEnd:(UITouch*)touch atPoint:(CGPoint)point;
+
+- (void)onLayoutChanged; // called when the position, width, or height is changed
 
 @end
