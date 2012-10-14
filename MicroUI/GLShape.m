@@ -111,7 +111,11 @@
         }
         
         // Draw our primitives!
-        glDrawArrays(GL_TRIANGLE_FAN, 0, self.numVertices);
+        if (self.numVertices >= 3) {
+            glDrawArrays(GL_TRIANGLE_FAN, 0, self.numVertices);
+        } else if (self.numVertices == 2) {
+            glDrawArrays(GL_LINE_STRIP, 0, self.numVertices);
+        }
         
         // Cleanup: Done with position data
         glDisableVertexAttribArray(GLKVertexAttribPosition);

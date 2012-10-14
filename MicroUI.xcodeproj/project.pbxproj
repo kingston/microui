@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43219B99162B64AA00BD278E /* GLLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 43219B98162B64AA00BD278E /* GLLine.m */; };
 		D035A82B162A7B9A000467EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D035A82A162A7B9A000467EB /* UIKit.framework */; };
 		D035A82D162A7B9A000467EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D035A82C162A7B9A000467EB /* Foundation.framework */; };
 		D035A835162A7B9A000467EB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D035A833162A7B9A000467EB /* InfoPlist.strings */; };
@@ -33,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43219B97162B64AA00BD278E /* GLLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLLine.h; sourceTree = "<group>"; };
+		43219B98162B64AA00BD278E /* GLLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLLine.m; sourceTree = "<group>"; };
 		D035A826162A7B9A000467EB /* MicroUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MicroUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D035A82A162A7B9A000467EB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D035A82C162A7B9A000467EB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -176,6 +179,8 @@
 				D035A875162A934A000467EB /* GLGraphicsContext.m */,
 				D035A877162A9B26000467EB /* GLRectangle.h */,
 				D035A878162A9B26000467EB /* GLRectangle.m */,
+				43219B97162B64AA00BD278E /* GLLine.h */,
+				43219B98162B64AA00BD278E /* GLLine.m */,
 			);
 			name = Graphics;
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 				D0796BCE162AB20C00534988 /* MicroUILabel.m in Sources */,
 				D0796BF1162ACA6E00534988 /* MicroUIButton.m in Sources */,
 				D0796BF4162AD31600534988 /* MicroUIDraggableBox.m in Sources */,
+				43219B99162B64AA00BD278E /* GLLine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
