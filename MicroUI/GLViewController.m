@@ -96,12 +96,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (CGPoint)getCoordinatesFromTouch:(UITouch *)touch
+{
+    CGPoint pt = [touch locationInView:[self view]];
+    // Swap vertical axis as iOS does things differently
+    pt.y = [self view].bounds.size.height - pt.y;
+    return pt;
+}
+
 //Tells the receiver when one or more fingers touch down in a view or window.
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"touches began");
     UITouch *touch = [touches anyObject];
-    [baseView hitTestForTouchAtPoint:[touch locationInView:[self view]]];
+    GLView *view = [baseView hitTestForTouchAtPoint:[self getCoordinatesFromTouch:touch]];
+    if (view != nil) {
+        NSLog(@"Detected touch for %@", view);
+    }
 }
 
 //Sent to the receiver when a system event (such as a low-memory warning) cancels a touch event.
@@ -109,7 +120,7 @@
 {
     NSLog(@"touches cancelled");
     UITouch *touch = [touches anyObject];
-    [baseView hitTestForTouchAtPoint:[touch locationInView:[self view]]];
+    [baseView hitTestForTouchAtPoint:[self getCoordinatesFromTouch:touch]];
 }
 
 //Tells the receiver when one or more fingers are raised from a view or window.
@@ -117,7 +128,7 @@
 {
     NSLog(@"touches ended");
     UITouch *touch = [touches anyObject];
-    [baseView hitTestForTouchAtPoint:[touch locationInView:[self view]]];
+    [baseView hitTestForTouchAtPoint:[self getCoordinatesFromTouch:touch]];
 }
 
 //Tells the receiver when one or more fingers associated with an event move within a view or window.
@@ -125,7 +136,7 @@
 {
     NSLog(@"touches moved");
     UITouch *touch = [touches anyObject];
-    [baseView hitTestForTouchAtPoint:[touch locationInView:[self view]]];
+    [baseView hitTestForTouchAtPoint:[self getCoordinatesFromTouch:touch]];
 }
 
 @end

@@ -64,16 +64,24 @@
     [subviews addObject:view];
 }
 
+- (BOOL)hitTestForPoint:(CGPoint)point
+{
+    return CGRectContainsPoint(self.boundingBox, point);
+}
+
 - (GLView *)hitTestForTouchAtPoint:(CGPoint)point
 {
     NSLog(@"%f, %f", point.x, point.y);
-    GLView *containingView = nil;
-    for (GLView *view in subviews) {
-        if(CGRectContainsPoint(view.boundingBox, point)) {
-            containingView = view;
+    if ([self hitTestForPoint:point]) {
+        // Check if any subviews are in bounding box
+        // reversed so that we get top most first
+        for (GLView *view in [subviews reverseObjectEnumerator]) {
+            GLView *targettedView = [view hitTestForTouchAtPoint:point];
+            if (targettedView) return targettedView;
         }
+        return self;
     }
-    return containingView;
+    return nil;
 }
 
 @end

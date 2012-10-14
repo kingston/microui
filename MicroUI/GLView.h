@@ -29,6 +29,8 @@
 
 - (void)addSubView:(GLView*)view;
 
+- (BOOL)hitTestForPoint:(CGPoint)point;
+
 - (GLView *)hitTestForTouchAtPoint:(CGPoint)point;
 
 @end
