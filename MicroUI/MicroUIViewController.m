@@ -13,11 +13,15 @@
 @end
 
 @implementation MicroUIViewController
+- (void)setupSubViews:(GLContainerView*)container
+{
+    // Our code here...
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning

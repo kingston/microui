@@ -1,5 +1,5 @@
 //
-//  MicroUIAppDelegate.h
+//  GLAppDelegate.h
 //  MicroUI
 //
 //  Created by Kingston Tam on 10/13/12.
@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GLKit/GLKit.h>
 
-@interface MicroUIAppDelegate : UIResponder <UIApplicationDelegate>
+@interface GLAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

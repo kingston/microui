@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 KT & JF Inc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "GLViewController.h"
 
-@interface MicroUIViewController : UIViewController
+@interface MicroUIViewController : GLViewController
 
 @end
