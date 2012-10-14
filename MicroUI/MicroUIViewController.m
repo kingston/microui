@@ -10,6 +10,7 @@
 #import "GLBox.h"
 #import "MicroUILabel.h"
 #import "MicroUIDraggableBox.h"
+#import "MicroUIDraggableContainer.h"
 #import "MicroUIButton.h"
 #import "MicroUIImage.h"
 
@@ -20,9 +21,12 @@
 @implementation MicroUIViewController
 - (void)setupSubViews:(GLView*)container
 {
+    MicroUIDraggableContainer *dragContainer = [[MicroUIDraggableContainer alloc] initWithBoundingBox:CGRectMake(50, 50, 300, 300)];
+    [container addSubView:dragContainer];
+    
     MicroUIDraggableBox *box = [[MicroUIDraggableBox alloc] initWithBoundingBox:CGRectMake(100, 100, 100, 100)];
     [box setColor:GLKVector4Make(1.0, 0.0, 0.0, 1.0)];
-    [container addSubView:box];
+    [dragContainer addSubView:box];
     
     MicroUILabel *text = [[MicroUILabel alloc] initWithX:100 AndY:300 AndWidth:200 AndHeight:50];
     text.isCentered = YES;

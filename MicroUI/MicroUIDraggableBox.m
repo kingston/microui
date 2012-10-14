@@ -7,6 +7,7 @@
 //
 
 #import "MicroUIDraggableBox.h"
+#import "MicroUIDraggableContainer.h"
 
 @implementation MicroUIDraggableBox
 
@@ -17,6 +18,16 @@
         currentTouch = nil;
     }
     return self;
+}
+
+- (MicroUIDraggableContainer*)findDraggableContainer
+{
+    GLView *parent = [self parent];
+    while (parent != nil) {
+        if ([parent isKindOfClass:[MicroUIDraggableContainer class]]) return (MicroUIDraggableContainer*) parent;
+        parent = [parent parent];
+    }
+    return nil;
 }
 
 - (void)onTouchStart:(UITouch *)touch atPoint:(CGPoint)point
@@ -31,8 +42,13 @@
 {
     if ([currentTouch nonretainedObjectValue] != touch) return;
     CGPoint newPt = dragStartBoxPosition;
-    newPt.x += point.x - dragStartTouchPosition.x;
-    newPt.y += point.y - dragStartTouchPosition.y;
+    
+    MicroUIDraggableContainer *container = [self findDraggableContainer];
+    // Only move it if it is within the container
+    if (!container || [container hitTestForPoint:point]) {
+        newPt.x += point.x - dragStartTouchPosition.x;
+        newPt.y += point.y - dragStartTouchPosition.y;
+    }
     
     CGRect box = self.boundingBox;
     box.origin = newPt;
