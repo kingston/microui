@@ -12,6 +12,16 @@
 
 @synthesize boundingBox;
 
+- (id) init
+{
+    return [self initWithBoundingBox:CGRectMake(0, 0, 0, 0)];
+}
+
+- (id)initWithX:(float)x AndY:(float)y AndWidth:(float)width AndHeight:(float)height
+{
+    return [self initWithBoundingBox:CGRectMake(x, y, width, height)];
+}
+
 - (id) initWithBoundingBox:(CGRect)box
 {
     self = [super init];

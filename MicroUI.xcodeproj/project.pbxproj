@@ -28,6 +28,7 @@
 		D035A876162A934A000467EB /* GLGraphicsContext.m in Sources */ = {isa = PBXBuildFile; fileRef = D035A875162A934A000467EB /* GLGraphicsContext.m */; };
 		D035A879162A9B26000467EB /* GLRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = D035A878162A9B26000467EB /* GLRectangle.m */; };
 		D035A87C162A9BFA000467EB /* GLBox.m in Sources */ = {isa = PBXBuildFile; fileRef = D035A87B162A9BFA000467EB /* GLBox.m */; };
+		D0796BCE162AB20C00534988 /* MicroUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D0796BCD162AB20C00534988 /* MicroUILabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,8 @@
 		D035A878162A9B26000467EB /* GLRectangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLRectangle.m; sourceTree = "<group>"; };
 		D035A87A162A9BFA000467EB /* GLBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLBox.h; sourceTree = "<group>"; };
 		D035A87B162A9BFA000467EB /* GLBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLBox.m; sourceTree = "<group>"; };
+		D0796BCC162AB20C00534988 /* MicroUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroUILabel.h; sourceTree = "<group>"; };
+		D0796BCD162AB20C00534988 /* MicroUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroUILabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +156,8 @@
 				D035A867162A870C000467EB /* GLContainerView.m */,
 				D035A87A162A9BFA000467EB /* GLBox.h */,
 				D035A87B162A9BFA000467EB /* GLBox.m */,
+				D0796BCC162AB20C00534988 /* MicroUILabel.h */,
+				D0796BCD162AB20C00534988 /* MicroUILabel.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 				D035A876162A934A000467EB /* GLGraphicsContext.m in Sources */,
 				D035A879162A9B26000467EB /* GLRectangle.m in Sources */,
 				D035A87C162A9BFA000467EB /* GLBox.m in Sources */,
+				D0796BCE162AB20C00534988 /* MicroUILabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

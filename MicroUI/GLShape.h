@@ -16,20 +16,21 @@
     NSMutableData *vertexData, *vertexColorData, *textureCoordinateData;
 }
 
-@property(readonly) int numVertices;
-@property(readonly) GLKVector2 *vertices;
-@property(readonly) GLKVector4 *vertexColors;
-@property(readonly) GLKVector2 *textureCoordinates;
-@property GLKVector4 color;
-@property BOOL useConstantColor;
-@property(strong,readonly) GLKTextureInfo *texture;
+@property(nonatomic, readonly) int numVertices;
+@property(nonatomic, readonly) GLKVector2 *vertices;
+@property(nonatomic, readonly) GLKVector4 *vertexColors;
+@property(nonatomic, readonly) GLKVector2 *textureCoordinates;
+@property(nonatomic) GLKVector4 color;
+@property(nonatomic) BOOL useConstantColor;
+@property(nonatomic, strong) GLKTextureInfo *texture;
 
-@property GLKVector2 position;
+@property(nonatomic) GLKVector2 position;
 
-@property(weak) GLShape *parent;
-@property(strong, readonly) NSMutableArray *children;
+@property(nonatomic, weak) GLShape *parent;
+@property(nonatomic, strong, readonly) NSMutableArray *children;
 
 - (void)renderWithContext:(GLGraphicsContext*)context;
 - (void)addChild:(GLShape *)child;
+- (void)setTextureImage:(UIImage *)image;
 
 @end

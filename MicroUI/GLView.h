@@ -15,6 +15,8 @@
 
 @property (nonatomic)CGRect boundingBox;
 
+- (id)initWithX:(float)x AndY:(float)y AndWidth:(float)width AndHeight:(float)height;
+
 - (id)initWithBoundingBox:(CGRect)box;
 
 - (void)updateWithController:(GLKViewController*)controller;

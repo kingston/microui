@@ -15,6 +15,16 @@
 -(id)init {
     self = [super init];
     if (self) {
+        // Draw with the color white
+        useConstantColor = YES;
+        color = GLKVector4Make(1,1,1,1);
+        
+        // No texture
+        texture = nil;
+        
+        // Center on the origin
+        position = GLKVector2Make(0,0);
+        
         children = [[NSMutableArray alloc] init];
     }
     return self;
@@ -66,6 +76,13 @@
             effect.constantColor = self.color;
         } else {
             effect.useConstantColor = NO;
+        }
+        
+        // Set up our texture effect if set
+        if (self.texture != nil) {
+            effect.texture2d0.envMode = GLKTextureEnvModeReplace;
+            effect.texture2d0.target = GLKTextureTarget2D;
+            effect.texture2d0.name = self.texture.name;
         }
         
         effect.transform.modelviewMatrix = self.modelviewMatrix;

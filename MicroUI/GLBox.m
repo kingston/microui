@@ -8,8 +8,18 @@
 
 #import "GLBox.h"
 #import "GLRectangle.h"
+#import <GLKit/GLKit.h>
 
 @implementation GLBox
+
+- (id)initWithBoundingBox:(CGRect)box
+{
+    self = [super initWithBoundingBox:box];
+    if (self) {
+        self.color = GLKVector4Make(0, 0, 0, 0);
+    }
+    return self;
+}
 
 @synthesize color;
 

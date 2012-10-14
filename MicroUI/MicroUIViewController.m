@@ -8,6 +8,7 @@
 
 #import "MicroUIViewController.h"
 #import "GLBox.h"
+#import "MicroUILabel.h"
 
 @interface MicroUIViewController ()
 
@@ -19,6 +20,10 @@
     GLBox *box = [[GLBox alloc] initWithBoundingBox:CGRectMake(100, 100, 100, 100)];
     [box setColor:GLKVector4Make(1.0, 0.0, 0.0, 1.0)];
     [container addView:box];
+    
+    MicroUILabel *text = [[MicroUILabel alloc] initWithX:100 AndY:300 AndWidth:200 AndHeight:50];
+    [text setText:@"AAAHHH"];
+    [container addView:text];
 }
 
 - (void)viewDidLoad
