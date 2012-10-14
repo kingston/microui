@@ -7,6 +7,7 @@
 //
 
 #import "MicroUIViewController.h"
+#import "GLBox.h"
 
 @interface MicroUIViewController ()
 
@@ -15,7 +16,9 @@
 @implementation MicroUIViewController
 - (void)setupSubViews:(GLContainerView*)container
 {
-    // Our code here...
+    GLBox *box = [[GLBox alloc] initWithBoundingBox:CGRectMake(100, 100, 100, 100)];
+    [box setColor:GLKVector4Make(1.0, 0.0, 0.0, 1.0)];
+    [container addView:box];
 }
 
 - (void)viewDidLoad
