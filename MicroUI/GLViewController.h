@@ -13,6 +13,7 @@
 
 @interface GLViewController : GLKViewController <GLKViewDelegate, GLKViewControllerDelegate> {
     GLContainerView *baseView;
+    GLGraphicsContext *graphicsContext;
 }
 
 - (void)setupBaseView;

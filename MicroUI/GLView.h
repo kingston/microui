@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <GLKit/GLKit.h>
+#import "GLShape.h"
+#import "GLGraphicsContext.h"
 
 @interface GLView : NSObject
 
@@ -17,6 +19,8 @@
 
 - (void)updateWithController:(GLKViewController*)controller;
 
-- (void)render;
+- (void)render:(GLGraphicsContext*) context;
+
+- (void)renderWithShape:(GLShape*) shape;
 
 @end

@@ -26,9 +26,18 @@
     // Do absolutely nothing
 }
 
-- (void)render
+- (void)render:(GLGraphicsContext*)context
 {
-    // Also nothing :)
+    // By default, render a base shape
+    GLShape *baseShape = [[GLShape alloc] init];
+    baseShape.position = GLKVector2Make(boundingBox.origin.x, boundingBox.origin.y);
+    [self renderWithShape:baseShape];
+    [baseShape renderWithContext:context];
+}
+
+- (void)renderWithShape:(GLShape *)shape
+{
+    // No shapes to render :)
 }
 
 @end

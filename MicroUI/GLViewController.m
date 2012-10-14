@@ -30,6 +30,9 @@
     
     GLKView *view = (GLKView*)[self view];
     [view setContext:context];
+    
+    graphicsContext = [[GLGraphicsContext alloc] init];
+    [graphicsContext setBaseEffect: [[GLKBaseEffect alloc] init]];
 }
 
 - (void)setupBaseView
@@ -72,7 +75,7 @@
     glClearColor(1.0, 1.0, 1.0, 1.0);
     glClear(GL_COLOR_BUFFER_BIT);
     
-    [baseView render];
+    [baseView render:graphicsContext];
 }
 
 - (void)didReceiveMemoryWarning
