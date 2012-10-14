@@ -18,6 +18,8 @@
     GLRectangle *rect = [[GLRectangle alloc] init];
     rect.width = self.boundingBox.size.width;
     rect.height = self.boundingBox.size.height;
+    rect.color = color;
+    rect.useConstantColor = YES;
     [shape addChild:rect];
 }
 @end
