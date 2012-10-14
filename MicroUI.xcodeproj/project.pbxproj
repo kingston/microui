@@ -35,6 +35,7 @@
 		D0AED1A6162B638200CFA62D /* MicroUIDraggableContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AED1A5162B638200CFA62D /* MicroUIDraggableContainer.m */; };
 		D0AED1A9162B659100CFA62D /* MicroUIDraggableLine.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AED1A8162B659100CFA62D /* MicroUIDraggableLine.m */; };
 		D0AED1AC162B65F500CFA62D /* MicroUIDraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AED1AB162B65F500CFA62D /* MicroUIDraggableView.m */; };
+		D0AED1AF162B697900CFA62D /* MicroUIDraggableEndpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AED1AE162B697900CFA62D /* MicroUIDraggableEndpoint.m */; };
 		D0FD3DB1162B5E99000D61E2 /* MicroUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FD3DB0162B5E99000D61E2 /* MicroUIImage.m */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,8 @@
 		D0AED1A8162B659100CFA62D /* MicroUIDraggableLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroUIDraggableLine.m; sourceTree = "<group>"; };
 		D0AED1AA162B65F500CFA62D /* MicroUIDraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroUIDraggableView.h; sourceTree = "<group>"; };
 		D0AED1AB162B65F500CFA62D /* MicroUIDraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroUIDraggableView.m; sourceTree = "<group>"; };
+		D0AED1AD162B697900CFA62D /* MicroUIDraggableEndpoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroUIDraggableEndpoint.h; sourceTree = "<group>"; };
+		D0AED1AE162B697900CFA62D /* MicroUIDraggableEndpoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroUIDraggableEndpoint.m; sourceTree = "<group>"; };
 		D0FD3DAF162B5E99000D61E2 /* MicroUIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroUIImage.h; sourceTree = "<group>"; };
 		D0FD3DB0162B5E99000D61E2 /* MicroUIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroUIImage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,6 +192,8 @@
 				D0AED1A8162B659100CFA62D /* MicroUIDraggableLine.m */,
 				D0AED1AA162B65F500CFA62D /* MicroUIDraggableView.h */,
 				D0AED1AB162B65F500CFA62D /* MicroUIDraggableView.m */,
+				D0AED1AD162B697900CFA62D /* MicroUIDraggableEndpoint.h */,
+				D0AED1AE162B697900CFA62D /* MicroUIDraggableEndpoint.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				D0AED1A6162B638200CFA62D /* MicroUIDraggableContainer.m in Sources */,
 				D0AED1A9162B659100CFA62D /* MicroUIDraggableLine.m in Sources */,
 				D0AED1AC162B65F500CFA62D /* MicroUIDraggableView.m in Sources */,
+				D0AED1AF162B697900CFA62D /* MicroUIDraggableEndpoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
