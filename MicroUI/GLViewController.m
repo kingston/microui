@@ -32,7 +32,10 @@
     [view setContext:context];
     
     graphicsContext = [[GLGraphicsContext alloc] init];
-    [graphicsContext setBaseEffect: [[GLKBaseEffect alloc] init]];
+    
+    // TODO: Update projection matrix on rotation
+    [graphicsContext setProjectionMatrix:GLKMatrix4MakeOrtho(0, view.bounds.size.width, 0, view.bounds.size.height, 1, -1)];
+    
 }
 
 - (void)setupBaseView

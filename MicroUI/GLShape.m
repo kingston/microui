@@ -55,7 +55,10 @@
 -(void)renderWithContext:(GLGraphicsContext *)context
 {
     if ([self numVertices] > 0) {
-        GLKBaseEffect *effect = [context baseEffect];
+        // TODO: Technically we should share base effect in graphics context, but....
+        GLKBaseEffect *effect = [[GLKBaseEffect alloc] init];
+        
+        effect.transform.projectionMatrix = context.projectionMatrix;
         
         // Set up the constant color effect if set
         if (useConstantColor) {

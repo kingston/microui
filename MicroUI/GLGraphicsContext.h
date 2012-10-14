@@ -11,6 +11,6 @@
 
 @interface GLGraphicsContext : NSObject
 
-@property (weak)GLKBaseEffect *baseEffect;
+@property GLKMatrix4 projectionMatrix;
 
 @end
