@@ -26,9 +26,9 @@
     [views makeObjectsPerformSelector:@selector(updateWithController:) withObject:controller];
 }
 
-- (void)render
+- (void)render:(GLGraphicsContext*)context
 {
-    [views makeObjectsPerformSelector:@selector(render)];
+    [views makeObjectsPerformSelector:@selector(render) withObject:context];
 }
 
 - (void)addView:(GLView *)view
