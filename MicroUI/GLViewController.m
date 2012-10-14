@@ -50,11 +50,11 @@
 - (void)setupBaseView
 {
     CGRect bounds = [[self view] bounds];
-    baseView = [[GLContainerView alloc] initWithBoundingBox:bounds];
+    baseView = [[GLView alloc] initWithBoundingBox:bounds];
     [self setupSubViews:baseView];
 }
 
-- (void)setupSubViews:(GLContainerView*)container
+- (void)setupSubViews:(GLView*)container
 {
     // no sub views to add
 }

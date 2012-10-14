@@ -9,14 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <GLKit/GLKit.h>
 #import "GLView.h"
-#import "GLContainerView.h"
 
 @interface GLViewController : GLKViewController <GLKViewDelegate, GLKViewControllerDelegate> {
-    GLContainerView *baseView;
+    GLView *baseView;
     GLGraphicsContext *graphicsContext;
 }
 
 - (void)setupBaseView;
-- (void)setupSubViews:(GLContainerView*)container;
+- (void)setupSubViews:(GLView*)container;
 
 @end

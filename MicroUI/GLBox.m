@@ -23,7 +23,7 @@
 
 @synthesize color;
 
-- (void)renderWithShape:(GLShape *)shape
+- (void)renderToShape:(GLShape *)shape
 {
     GLRectangle *rect = [[GLRectangle alloc] init];
     rect.width = self.boundingBox.size.width;

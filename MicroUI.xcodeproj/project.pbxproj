@@ -21,7 +21,6 @@
 		D035A85A162A7EEF000467EB /* GLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D035A859162A7EEF000467EB /* GLAppDelegate.m */; };
 		D035A85D162A8048000467EB /* GLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D035A85C162A8048000467EB /* GLViewController.m */; };
 		D035A865162A85B0000467EB /* GLView.m in Sources */ = {isa = PBXBuildFile; fileRef = D035A864162A85B0000467EB /* GLView.m */; };
-		D035A868162A870C000467EB /* GLContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D035A867162A870C000467EB /* GLContainerView.m */; };
 		D035A86F162A8AB3000467EB /* MicroUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D035A86E162A8AB2000467EB /* MicroUIViewController.m */; };
 		D035A870162A8B7A000467EB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D035A82E162A7B9A000467EB /* CoreGraphics.framework */; };
 		D035A873162A918C000467EB /* GLShape.m in Sources */ = {isa = PBXBuildFile; fileRef = D035A872162A918C000467EB /* GLShape.m */; };
@@ -53,8 +52,6 @@
 		D035A85C162A8048000467EB /* GLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLViewController.m; sourceTree = "<group>"; };
 		D035A863162A85B0000467EB /* GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLView.h; sourceTree = "<group>"; };
 		D035A864162A85B0000467EB /* GLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLView.m; sourceTree = "<group>"; };
-		D035A866162A870C000467EB /* GLContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLContainerView.h; sourceTree = "<group>"; };
-		D035A867162A870C000467EB /* GLContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLContainerView.m; sourceTree = "<group>"; };
 		D035A86D162A8AB2000467EB /* MicroUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroUIViewController.h; sourceTree = "<group>"; };
 		D035A86E162A8AB2000467EB /* MicroUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroUIViewController.m; sourceTree = "<group>"; };
 		D035A871162A918C000467EB /* GLShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLShape.h; sourceTree = "<group>"; };
@@ -152,8 +149,6 @@
 			children = (
 				D035A863162A85B0000467EB /* GLView.h */,
 				D035A864162A85B0000467EB /* GLView.m */,
-				D035A866162A870C000467EB /* GLContainerView.h */,
-				D035A867162A870C000467EB /* GLContainerView.m */,
 				D035A87A162A9BFA000467EB /* GLBox.h */,
 				D035A87B162A9BFA000467EB /* GLBox.m */,
 				D0796BCC162AB20C00534988 /* MicroUILabel.h */,
@@ -246,7 +241,6 @@
 				D035A85A162A7EEF000467EB /* GLAppDelegate.m in Sources */,
 				D035A85D162A8048000467EB /* GLViewController.m in Sources */,
 				D035A865162A85B0000467EB /* GLView.m in Sources */,
-				D035A868162A870C000467EB /* GLContainerView.m in Sources */,
 				D035A86F162A8AB3000467EB /* MicroUIViewController.m in Sources */,
 				D035A873162A918C000467EB /* GLShape.m in Sources */,
 				D035A876162A934A000467EB /* GLGraphicsContext.m in Sources */,

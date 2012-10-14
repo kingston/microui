@@ -14,6 +14,8 @@
 @interface GLView : NSObject
 
 @property (nonatomic)CGRect boundingBox;
+@property (nonatomic, weak)GLView *parent;
+@property (nonatomic, readonly, strong)NSMutableArray *subviews;
 
 - (id)initWithX:(float)x AndY:(float)y AndWidth:(float)width AndHeight:(float)height;
 
@@ -21,8 +23,12 @@
 
 - (void)updateWithController:(GLKViewController*)controller;
 
-- (void)render:(GLGraphicsContext*) context;
+- (void)render:(GLGraphicsContext*)context;
 
-- (void)renderWithShape:(GLShape*) shape;
+- (void)renderToShape:(GLShape*)shape;
+
+- (void)addSubView:(GLView*)view;
+
+- (GLView *)hitTestForTouchAtPoint:(CGPoint)point;
 
 @end

@@ -58,9 +58,9 @@
     return outputImage;
 }
 
-- (void)renderWithShape:(GLShape *)shape
+- (void)renderToShape:(GLShape *)shape
 {
-    [super renderWithShape:shape];
+    [super renderToShape:shape];
     
     GLRectangle *rect = [[GLRectangle alloc] init];
     rect.color = GLKVector4Make(1,0,0,0);

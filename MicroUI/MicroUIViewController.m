@@ -15,15 +15,15 @@
 @end
 
 @implementation MicroUIViewController
-- (void)setupSubViews:(GLContainerView*)container
+- (void)setupSubViews:(GLView*)container
 {
     GLBox *box = [[GLBox alloc] initWithBoundingBox:CGRectMake(100, 100, 100, 100)];
     [box setColor:GLKVector4Make(1.0, 0.0, 0.0, 1.0)];
-    [container addView:box];
+    [container addSubView:box];
     
     MicroUILabel *text = [[MicroUILabel alloc] initWithX:100 AndY:300 AndWidth:200 AndHeight:50];
     [text setText:@"AAAHHH"];
-    [container addView:text];
+    [container addSubView:text];
 }
 
 - (void)viewDidLoad

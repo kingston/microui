@@ -10,7 +10,7 @@
 
 @implementation GLView
 
-@synthesize boundingBox;
+@synthesize boundingBox, parent, subviews;
 
 - (id) init
 {
@@ -27,27 +27,53 @@
     self = [super init];
     if (self) {
         boundingBox = box;
+        subviews = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
 - (void)updateWithController:(GLKViewController *)controller
 {
-    // Do absolutely nothing
+    [subviews makeObjectsPerformSelector:@selector(updateWithController:) withObject:controller];
 }
 
 - (void)render:(GLGraphicsContext*)context
 {
-    // By default, render a base shape
-    GLShape *baseShape = [[GLShape alloc] init];
-    baseShape.position = GLKVector2Make(boundingBox.origin.x, boundingBox.origin.y);
-    [self renderWithShape:baseShape];
-    [baseShape renderWithContext:context];
+    // Slightly awkward... :/
+    
+    // By default, render a base shape if we are subclassing
+    if ([self class] != [GLView class]) {
+        GLShape *baseShape = [[GLShape alloc] init];
+        baseShape.position = GLKVector2Make(boundingBox.origin.x, boundingBox.origin.y);
+        [self renderToShape:baseShape];
+        [baseShape renderWithContext:context];
+    }
+    
+    // Render sub views afterwards
+    [subviews makeObjectsPerformSelector:@selector(render:) withObject:context];
 }
 
-- (void)renderWithShape:(GLShape *)shape
+- (void)renderToShape:(GLShape *)shape
 {
     // No shapes to render :)
+}
+
+- (void)addSubView:(GLView *)view
+{
+    view.parent = self;
+    [subviews addObject:view];
+}
+
+- (GLView *)hitTestForTouchAtPoint:(CGPoint)point
+{
+    NSLog(@"%f, %f", point.x, point.y);
+    GLView *containingView = nil;
+    for (GLView *view in subviews) {
+        if(CGRectContainsPoint(view.boundingBox, point)) {
+            containingView = view;
+        }
+    }
+    return containingView;
 }
 
 @end
