@@ -30,6 +30,8 @@
 		D0796BCE162AB20C00534988 /* MicroUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D0796BCD162AB20C00534988 /* MicroUILabel.m */; };
 		D0796BF1162ACA6E00534988 /* MicroUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D0796BF0162ACA6E00534988 /* MicroUIButton.m */; };
 		D0796BF4162AD31600534988 /* MicroUIDraggableBox.m in Sources */ = {isa = PBXBuildFile; fileRef = D0796BF3162AD31600534988 /* MicroUIDraggableBox.m */; };
+		D0AED1A2162B61C100CFA62D /* avatar.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D0AED1A1162B61C100CFA62D /* avatar.jpeg */; };
+		D0FD3DB1162B5E99000D61E2 /* MicroUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FD3DB0162B5E99000D61E2 /* MicroUIImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,9 @@
 		D0796BF0162ACA6E00534988 /* MicroUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroUIButton.m; sourceTree = "<group>"; };
 		D0796BF2162AD31600534988 /* MicroUIDraggableBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroUIDraggableBox.h; sourceTree = "<group>"; };
 		D0796BF3162AD31600534988 /* MicroUIDraggableBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroUIDraggableBox.m; sourceTree = "<group>"; };
+		D0AED1A1162B61C100CFA62D /* avatar.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar.jpeg; sourceTree = "<group>"; };
+		D0FD3DAF162B5E99000D61E2 /* MicroUIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroUIImage.h; sourceTree = "<group>"; };
+		D0FD3DB0162B5E99000D61E2 /* MicroUIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroUIImage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +144,7 @@
 		D035A831162A7B9A000467EB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D0AED1A1162B61C100CFA62D /* avatar.jpeg */,
 				D035A832162A7B9A000467EB /* MicroUI-Info.plist */,
 				D035A833162A7B9A000467EB /* InfoPlist.strings */,
 				D035A836162A7B9A000467EB /* main.m */,
@@ -163,6 +169,8 @@
 				D0796BF0162ACA6E00534988 /* MicroUIButton.m */,
 				D0796BF2162AD31600534988 /* MicroUIDraggableBox.h */,
 				D0796BF3162AD31600534988 /* MicroUIDraggableBox.m */,
+				D0FD3DAF162B5E99000D61E2 /* MicroUIImage.h */,
+				D0FD3DB0162B5E99000D61E2 /* MicroUIImage.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -237,6 +245,7 @@
 				D035A83F162A7B9A000467EB /* Default@2x.png in Resources */,
 				D035A841162A7B9A000467EB /* Default-568h@2x.png in Resources */,
 				D035A844162A7B9A000467EB /* MainStoryboard.storyboard in Resources */,
+				D0AED1A2162B61C100CFA62D /* avatar.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +268,7 @@
 				D0796BCE162AB20C00534988 /* MicroUILabel.m in Sources */,
 				D0796BF1162ACA6E00534988 /* MicroUIButton.m in Sources */,
 				D0796BF4162AD31600534988 /* MicroUIDraggableBox.m in Sources */,
+				D0FD3DB1162B5E99000D61E2 /* MicroUIImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

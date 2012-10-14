@@ -11,6 +11,7 @@
 #import "MicroUILabel.h"
 #import "MicroUIDraggableBox.h"
 #import "MicroUIButton.h"
+#import "MicroUIImage.h"
 
 @interface MicroUIViewController ()
 
@@ -32,6 +33,10 @@
     MicroUIButton *button = [[MicroUIButton alloc] initWithX:100 AndY:400 AndWidth:200 AndHeight:50];
     [button setButtonText:@"touch me"];
     [container addSubView:button];
+    
+    MicroUIImage *image = [[MicroUIImage alloc] initWithX:100 AndY:200 AndWidth:100 AndHeight:100];
+    [image setImage:[UIImage imageNamed:@"avatar.jpeg"]];
+    [container addSubView:image];
 }
 
 - (void)viewDidLoad
