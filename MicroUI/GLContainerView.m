@@ -28,7 +28,7 @@
 
 - (void)render:(GLGraphicsContext*)context
 {
-    [views makeObjectsPerformSelector:@selector(render) withObject:context];
+    [views makeObjectsPerformSelector:@selector(render:) withObject:context];
 }
 
 - (void)addView:(GLView *)view
@@ -39,11 +39,13 @@
 - (GLView *)hitTestForTouchAtPoint:(CGPoint)point
 {
     NSLog(@"%f, %f", point.x, point.y);
+    GLView *containingView = nil;
     for (GLView *view in views) {
-        CGRect boundingBox = view.boundingBox;
-        
+        if(CGRectContainsPoint(view.boundingBox, point)) {
+            containingView = view;
+        }
     }
-    return nil;
+    return containingView;
 }
 
 @end
