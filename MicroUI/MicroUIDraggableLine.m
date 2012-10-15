@@ -8,7 +8,7 @@
 
 #import "MicroUIDraggableLine.h"
 #import "GLLine.h"
-#define ENDPOINT_RADIUS 3
+#define ENDPOINT_RADIUS 10
 
 @implementation MicroUIDraggableLine
 

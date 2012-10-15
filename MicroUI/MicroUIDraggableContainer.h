@@ -10,6 +10,11 @@
 
 // Contains draggable objects and doesn't let them out.
 
-@interface MicroUIDraggableContainer : GLView
+@interface MicroUIDraggableContainer : GLView {
+    NSValue *currentTouch;
+    CGPoint dragStartTouchPosition;
+}
+
+@property (nonatomic, strong) NSMutableArray *lineArray;
 
 @end

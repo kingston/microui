@@ -77,6 +77,11 @@
     [subviews addObject:view];
 }
 
+- (void)removeAllSubViews
+{
+    [subviews removeAllObjects];
+}
+
 - (BOOL)hitTestForPoint:(CGPoint)point
 {
     return CGRectContainsPoint(self.absoluteBoundingBox, point);

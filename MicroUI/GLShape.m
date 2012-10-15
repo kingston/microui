@@ -114,8 +114,16 @@
         if (self.numVertices >= 3) {
             glDrawArrays(GL_TRIANGLE_FAN, 0, self.numVertices);
         } else if (self.numVertices == 2) {
-            glLineWidth(5.);
+            glLineWidth(3.);
             glDrawArrays(GL_LINE_STRIP, 0, self.numVertices);
+            //circle on the line endpoint
+            GLKVector2 *endpointVertices = [[NSMutableData dataWithLength:sizeof(GLKVector2)*3] mutableBytes];
+            endpointVertices[0] = GLKVector2Make(self.vertices[1].x - 3, self.vertices[1].y - 3);
+            endpointVertices[1] = GLKVector2Make(self.vertices[1].x - 3, self.vertices[1].y + 3);
+            endpointVertices[2] = GLKVector2Make(self.vertices[1].x + 3, self.vertices[1].y + 3);
+            endpointVertices[3] = GLKVector2Make(self.vertices[1].x + 3, self.vertices[1].y - 3);
+            glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 0, endpointVertices);
+            glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
         }
         
         // Cleanup: Done with position data

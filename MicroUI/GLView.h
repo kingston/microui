@@ -31,6 +31,8 @@
 
 - (void)addSubView:(GLView*)view;
 
+- (void)removeAllSubViews;
+
 - (CGRect)absoluteBoundingBox;
 
 - (BOOL)hitTestForPoint:(CGPoint)point;
