@@ -8,12 +8,6 @@
 
 #import "MicroUIViewController.h"
 #import "GLBox.h"
-#import "MicroUILabel.h"
-#import "MicroUIDraggableBox.h"
-#import "MicroUIDraggableContainer.h"
-#import "MicroUIButton.h"
-#import "MicroUIImage.h"
-#import "MicroUIDraggableLine.h"
 
 @interface MicroUIViewController ()
 
@@ -41,9 +35,10 @@
     [text setText:@"MicroUI by Kingston and Julie"];
     [container addSubView:text];
     
-    MicroUIButton *button = [[MicroUIButton alloc] initWithX:100 AndY:400 AndWidth:200 AndHeight:50];
-    [button setButtonText:@"Exit"];
-    [container addSubView:button];
+    exitButton = [[MicroUIButton alloc] initWithX:100 AndY:400 AndWidth:200 AndHeight:50];
+    [exitButton setButtonText:@"Exit"];
+    [exitButton setDelegate:self];
+    [container addSubView:exitButton];
     
 //    MicroUIDraggableLine *line = [[MicroUIDraggableLine alloc] initWithBoundingBox:CGRectMake(100, 100, 100, 100)];
 //    //start and end point are relative to the bounding box
@@ -60,6 +55,11 @@
 //    [line setStartPoint:CGPointMake(200, 200)];
 //    [line setEndPoint:CGPointMake(300, 300)];
 //    [container addSubView:line];
+}
+
+- (void)onButtonPress:(CGPoint)point withSender:(GLView*)sender
+{
+    if (sender == exitButton) exit(0);
 }
 
 - (void)viewDidLoad

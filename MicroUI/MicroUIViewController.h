@@ -7,7 +7,16 @@
 //
 
 #import "GLViewController.h"
+#import "MicroUILabel.h"
+#import "MicroUIDraggableBox.h"
+#import "MicroUIDraggableContainer.h"
+#import "MicroUIButton.h"
+#import "MicroUIImage.h"
+#import "MicroUIDraggableLine.h"
+#import "MicroUIButtonDelegate.h"
 
-@interface MicroUIViewController : GLViewController
+@interface MicroUIViewController : GLViewController<MicroUIButtonDelegate> {
+    MicroUIButton *exitButton;
+}
 
 @end

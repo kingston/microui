@@ -9,6 +9,7 @@
 #import "GLView.h"
 #import "GLBox.h"
 #import "MicroUILabel.h"
+#import "MicroUIButtonDelegate.h"
 
 @interface MicroUIButton : GLView {
     GLBox *rect;

@@ -92,6 +92,7 @@
 		D0AED1B0162B6CD700CFA62D /* MicroUIDraggableDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MicroUIDraggableDelegate.h; sourceTree = "<group>"; };
 		D0AED1B1162B752800CFA62D /* GLQuad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLQuad.h; sourceTree = "<group>"; };
 		D0AED1B2162B752800CFA62D /* GLQuad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLQuad.m; sourceTree = "<group>"; };
+		D0B9944E162BCAB600D5B397 /* MicroUIButtonDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MicroUIButtonDelegate.h; sourceTree = "<group>"; };
 		D0FD3DAF162B5E99000D61E2 /* MicroUIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroUIImage.h; sourceTree = "<group>"; };
 		D0FD3DB0162B5E99000D61E2 /* MicroUIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroUIImage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -199,6 +200,7 @@
 				D0AED1AD162B697900CFA62D /* MicroUIDraggableEndpoint.h */,
 				D0AED1AE162B697900CFA62D /* MicroUIDraggableEndpoint.m */,
 				D0AED1B0162B6CD700CFA62D /* MicroUIDraggableDelegate.h */,
+				D0B9944E162BCAB600D5B397 /* MicroUIButtonDelegate.h */,
 			);
 			name = Views;
 			sourceTree = "<group>";

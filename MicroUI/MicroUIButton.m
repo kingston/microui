@@ -17,10 +17,10 @@
         self.activeColor = GLKVector4Make(0.5, 0.5, 1, 1);
         self.leftColor = GLKVector4Make(0.25, 0.25, 1, 1);
         
-        rect = [[GLBox alloc] initWithBoundingBox:box];
+        rect = [[GLBox alloc] initWithBoundingBox:CGRectMake(0, 0, box.size.width, box.size.height)];
         rect.color = normalColor;
         [self addSubView:rect];
-        label = [[MicroUILabel alloc] initWithBoundingBox:box];
+        label = [[MicroUILabel alloc] initWithBoundingBox:CGRectMake(0, 0, box.size.width, box.size.height)];
         label.isCentered = true;
         label.color = [UIColor whiteColor];
         label.font = [UIFont fontWithName:@"Helvetica-Bold" size:20.0];
@@ -57,7 +57,9 @@
 {
     rect.color = normalColor;
     //Does this work? I can't tell becuase I can't see the button :(
-    exit(0);
+    if ([self hitTestForPoint:point] && [self.delegate respondsToSelector:@selector(onButtonPress:withSender:)]) {
+        [self.delegate onButtonPress:point withSender:self];
+    }
 }
 
 @synthesize activeColor, normalColor, leftColor, buttonText;
