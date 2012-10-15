@@ -1,5 +1,5 @@
 //
-//  GLRectangle.h
+//  GLQuad.m
 //  MicroUI
 //
 //  Created by Kingston Tam on 10/14/12.
@@ -8,8 +8,8 @@
 
 #import "GLQuad.h"
 
-@interface GLRectangle : GLQuad
-
-@property (nonatomic) float width, height;
-
+@implementation GLQuad
+-(int)numVertices {
+    return 4;
+}
 @end

@@ -10,7 +10,7 @@
 
 @implementation GLView
 
-@synthesize boundingBox, parent, subviews;
+@synthesize boundingBox, parent, subviews, delegate;
 
 - (id) init
 {
@@ -38,9 +38,25 @@
     [self onLayoutChanged];
 }
 
+- (CGPoint)position
+{
+    return boundingBox.origin;
+}
+
 - (void)setPosition:(CGPoint)pt
 {
     boundingBox.origin = pt;
+    [self onLayoutChanged];
+}
+
+- (CGSize)size
+{
+    return boundingBox.size;
+}
+
+- (void)setSize:(CGSize)size
+{
+    boundingBox.size = size;
     [self onLayoutChanged];
 }
 
@@ -126,6 +142,26 @@
         box.origin = CGPointMake(parentOrigin.x + origin.x, parentOrigin.y + origin.y);
     }
     return box;
+}
+
+- (CGPoint)getRelativePointFromAbsolutePoint:(CGPoint)point
+{
+    if (parent != nil) {
+        point = [parent getRelativePointFromAbsolutePoint:point];
+    }
+    point.x -= boundingBox.origin.x;
+    point.y -= boundingBox.origin.y;
+    return point;
+}
+
+- (CGPoint)getAbsolutePointFromRelativePoint:(CGPoint)point
+{
+    if (parent != nil) {
+        point = [parent getAbsolutePointFromRelativePoint:point];
+    }
+    point.x += boundingBox.origin.x;
+    point.y += boundingBox.origin.y;
+    return point;
 }
 
 - (void)onLayoutChanged

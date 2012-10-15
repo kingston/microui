@@ -8,6 +8,7 @@
 
 #import "GLView.h"
 #import "MicroUIDraggableContainer.h"
+#import "MicroUIDraggableDelegate.h"
 
 @interface MicroUIDraggableView : GLView {
     NSValue *currentTouch;

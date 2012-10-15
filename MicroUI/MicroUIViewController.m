@@ -45,12 +45,21 @@
     [button setButtonText:@"Exit"];
     [container addSubView:button];
     
-    MicroUIDraggableLine *line = [[MicroUIDraggableLine alloc] initWithBoundingBox:CGRectMake(100, 100, 100, 100)];
-    //start and end point are relative to the bounding box
-    line.startPoint = CGPointMake(0, 0);
-    line.endPoint = CGPointMake(100, 100);
-    [line setColor:GLKVector4Make(0., 0., 0., 1.)];
-    [dragContainer addSubView:line];
+//    MicroUIDraggableLine *line = [[MicroUIDraggableLine alloc] initWithBoundingBox:CGRectMake(100, 100, 100, 100)];
+//    //start and end point are relative to the bounding box
+//    line.startPoint = CGPointMake(0, 0);
+//    line.endPoint = CGPointMake(100, 100);
+//    [line setColor:GLKVector4Make(0., 0., 0., 1.)];
+//    [dragContainer addSubView:line];
+
+    MicroUIImage *image = [[MicroUIImage alloc] initWithX:100 AndY:200 AndWidth:100 AndHeight:100];
+    [image setImage:[UIImage imageNamed:@"avatar.jpeg"]];
+    [container addSubView:image];
+    
+    MicroUIDraggableLine *line = [[MicroUIDraggableLine alloc] initWithX:0 AndY:0 AndWidth:0 AndHeight:0];
+    [line setStartPoint:CGPointMake(200, 200)];
+    [line setEndPoint:CGPointMake(300, 300)];
+    [container addSubView:line];
 }
 
 - (void)viewDidLoad

@@ -50,6 +50,10 @@
     }
     
     [self setPosition:newPt];
+    
+    if ([[self delegate] respondsToSelector:@selector(onDragMove:withSender:)]) {
+        [[self delegate] onDragMove:newPt withSender:self];
+    }
 }
 
 - (void)onTouchEnd:(UITouch *)touch atPoint:(CGPoint)point

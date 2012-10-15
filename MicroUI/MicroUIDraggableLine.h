@@ -8,8 +8,9 @@
 
 #import "MicroUIDraggableView.h"
 #import "MicroUIDraggableEndpoint.h"
+#import "MicroUIDraggableDelegate.h"
 
-@interface MicroUIDraggableLine : MicroUIDraggableView {
+@interface MicroUIDraggableLine : MicroUIDraggableView<MicroUIDraggableDelegate> {
     MicroUIDraggableEndpoint *start;
     MicroUIDraggableEndpoint *end;
 }

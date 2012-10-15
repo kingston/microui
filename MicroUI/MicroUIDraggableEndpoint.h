@@ -11,8 +11,12 @@
 
 @interface MicroUIDraggableEndpoint : MicroUIDraggableView {
     GLBox *boxView;
+    CGRect actualRect;
 }
 
+- (id)initWithCoordinates:(CGPoint)pt;
+
 @property (nonatomic)GLKVector4 color;
+@property (nonatomic)float radius;
 
 @end
