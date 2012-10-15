@@ -17,6 +17,8 @@
 
 @interface MicroUIViewController : GLViewController<MicroUIButtonDelegate> {
     MicroUIButton *exitButton;
+    MicroUIButton *deleteButton;
+    MicroUIDraggableContainer *dragContainer;
 }
 
 @end

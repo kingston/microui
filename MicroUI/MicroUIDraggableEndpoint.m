@@ -51,7 +51,7 @@
 -(BOOL)hitTestForPoint:(CGPoint)point
 {
     if (self.parent != nil) point = [[self parent] getRelativePointFromAbsolutePoint:point];
-    return (point.x - [self position].x) * (point.x - [self position].x) + (point.y - [self position].y) * (point.y - [self position].y) < radius * radius;
+    return (point.x - [self position].x) * (point.x - [self position].x) + (point.y - [self position].y) * (point.y - [self position].y) < 100;
 }
 
 @end

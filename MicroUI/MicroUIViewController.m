@@ -22,12 +22,12 @@
     [image setImage:[UIImage imageNamed:@"avatar.jpeg"]];
     [container addSubView:image];
     
-    MicroUIDraggableContainer *dragContainer = [[MicroUIDraggableContainer alloc] initWithBoundingBox:CGRectMake(0, 0, screenBounds.size.width, screenBounds.size.height)];
+    dragContainer = [[MicroUIDraggableContainer alloc] initWithBoundingBox:CGRectMake(0, 0, screenBounds.size.width, screenBounds.size.height)];
     [container addSubView:dragContainer];
-    
-//    MicroUIDraggableBox *box = [[MicroUIDraggableBox alloc] initWithBoundingBox:CGRectMake(0, 0, 100, 100)];
-//    [box setColor:GLKVector4Make(1.0, 0.0, 0.0, 1.0)];
-//    [dragContainer addSubView:box];
+    MicroUIDraggableBox *box = [[MicroUIDraggableBox alloc] initWithBoundingBox:CGRectMake(0, 0, 100, 100)];
+    [box setColor:GLKVector4Make(1.0, 0.0, 0.0, 1.0)];
+    [dragContainer.viewArray addObject:box];
+    [dragContainer drawViewsInContainer];
     
     MicroUILabel *text = [[MicroUILabel alloc] initWithX:10 AndY:400 AndWidth:200 AndHeight:50];
     text.isCentered = YES;
@@ -35,31 +35,23 @@
     [text setText:@"MicroUI by Kingston and Julie"];
     [container addSubView:text];
     
-    exitButton = [[MicroUIButton alloc] initWithX:100 AndY:400 AndWidth:200 AndHeight:50];
+    exitButton = [[MicroUIButton alloc] initWithX:225 AndY:400 AndWidth:90 AndHeight:50];
     [exitButton setButtonText:@"Exit"];
     [exitButton setDelegate:self];
     [container addSubView:exitButton];
     
-//    MicroUIDraggableLine *line = [[MicroUIDraggableLine alloc] initWithBoundingBox:CGRectMake(100, 100, 100, 100)];
-//    //start and end point are relative to the bounding box
-//    line.startPoint = CGPointMake(0, 0);
-//    line.endPoint = CGPointMake(100, 100);
-//    [line setColor:GLKVector4Make(0., 0., 0., 1.)];
-//    [dragContainer addSubView:line];
-
-//    MicroUIImage *image = [[MicroUIImage alloc] initWithX:100 AndY:200 AndWidth:100 AndHeight:100];
-//    [image setImage:[UIImage imageNamed:@"avatar.jpeg"]];
-//    [container addSubView:image];
-    
-//    MicroUIDraggableLine *line = [[MicroUIDraggableLine alloc] initWithX:0 AndY:0 AndWidth:0 AndHeight:0];
-//    [line setStartPoint:CGPointMake(200, 200)];
-//    [line setEndPoint:CGPointMake(300, 300)];
-//    [container addSubView:line];
+    deleteButton = [[MicroUIButton alloc] initWithX:225 AndY:325 AndWidth:90 AndHeight:50];
+    [deleteButton setButtonText:@"Remove"];
+    [deleteButton setDelegate:self];
+    [container addSubView:deleteButton];
 }
 
 - (void)onButtonPress:(CGPoint)point withSender:(GLView*)sender
 {
     if (sender == exitButton) exit(0);
+    if (sender == deleteButton) {
+        [dragContainer removeSelectedViewsInContainer];
+    }
 }
 
 - (void)viewDidLoad

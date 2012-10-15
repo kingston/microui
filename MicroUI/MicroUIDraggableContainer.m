@@ -8,17 +8,18 @@
 
 #import "MicroUIDraggableContainer.h"
 #import "MicroUIDraggableLine.h"
+#import "MicroUIDraggableBox.h"
 
 @implementation MicroUIDraggableContainer
 
-@synthesize lineArray = _lineArray;
+@synthesize viewArray = _viewArray;
 
-- (NSMutableArray *)lineArray
+- (NSMutableArray *)viewArray
 {
-    if (!_lineArray) {
-        _lineArray = [[NSMutableArray alloc] init];
+    if (!_viewArray) {
+        _viewArray = [[NSMutableArray alloc] init];
     }
-    return _lineArray;
+    return _viewArray;
 }
 
 - (void)onTouchStart:(UITouch *)touch atPoint:(CGPoint)point
@@ -34,8 +35,8 @@
     line.startPoint = startPointInImage;
     line.endPoint = endPointInImage;
     [line setColor:GLKVector4Make(0., 0., 0., 1.)];
-    [self.lineArray addObject:line];
-    [self drawLinesInContainer];
+    [self.viewArray addObject:line];
+    [self drawViewsInContainer];
 }
 
 - (void)onTouchMove:(UITouch *)touch atPoint:(CGPoint)point
@@ -48,9 +49,9 @@
     line.startPoint = startPointInImage;
     line.endPoint = endPointInImage;
     [line setColor:GLKVector4Make(1., 1., 1., 1.)];
-    [self.lineArray removeLastObject];
-    [self.lineArray addObject:line];
-    [self drawLinesInContainer];
+    [self.viewArray removeLastObject];
+    [self.viewArray addObject:line];
+    [self drawViewsInContainer];
 }
 
 - (void)onTouchEnd:(UITouch *)touch atPoint:(CGPoint)point
@@ -65,17 +66,33 @@
     line.startPoint = startPointInImage;
     line.endPoint = endPointInImage;
     [line setColor:GLKVector4Make(0., 0., 0., 1.)];
-    [self.lineArray removeLastObject];
-    [self.lineArray addObject:line];
-    [self drawLinesInContainer];
+    [self.viewArray removeLastObject];
+    [self.viewArray addObject:line];
+    [self drawViewsInContainer];
 }
 
-- (void)drawLinesInContainer
+- (void)drawViewsInContainer
 {
     [self removeAllSubViews];
-    for (MicroUIDraggableLine *line in self.lineArray) {
-        [self addSubView:line];
+    for (MicroUIDraggableView *view in self.viewArray) {
+        [self addSubView:view];
     }
+}
+
+- (void)removeSelectedViewsInContainer
+{
+    NSMutableIndexSet *indices = [[NSMutableIndexSet alloc] init];
+    for (int i = 0; i < [self.viewArray count]; i++) {
+        MicroUIDraggableView *view = self.viewArray[i];
+        if (view.class == [MicroUIDraggableLine class]) {
+            MicroUIDraggableLine *line = (MicroUIDraggableLine *)view;
+            if (line.isSelected) {
+                [indices addIndex:i];
+            }
+        }
+    }
+    [self.viewArray removeObjectsAtIndexes:indices];
+    [self drawViewsInContainer];
 }
 
 @end

@@ -15,6 +15,10 @@
     CGPoint dragStartTouchPosition;
 }
 
-@property (nonatomic, strong) NSMutableArray *lineArray;
+@property (nonatomic, strong) NSMutableArray *viewArray;
+
+- (void)drawViewsInContainer;
+
+- (void)removeSelectedViewsInContainer;
 
 @end

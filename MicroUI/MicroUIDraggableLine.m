@@ -14,6 +14,10 @@
 
 @implementation MicroUIDraggableLine
 
+@synthesize startPoint, endPoint;
+@synthesize color = _color;
+@synthesize isSelected = _isSelected;
+
 - (id)initWithBoundingBox:(CGRect)box
 {
     self = [super initWithBoundingBox:box];
@@ -30,8 +34,6 @@
     }
     return self;
 }
-
-@synthesize startPoint, endPoint;
 
 - (void)setStartPoint:(CGPoint)_startPoint
 {
@@ -114,7 +116,7 @@
 {
     GLLine *line = [[GLLine alloc] init];
     line.useConstantColor = YES;
-    line.color = self.color;
+    line.color = self.isSelected ? GLKVector4Make(1, 0, 0, 1) : self.color;
     line.start = [self getRelativePointFromAbsolutePoint:self.startPoint];
     line.end = [self getRelativePointFromAbsolutePoint:self.endPoint];
     [shape addChild:line];
@@ -131,6 +133,12 @@
     // Update start/end point if we get dragged
     startPoint = [self getAbsolutePointFromRelativePoint:[start position]];
     endPoint = [self getAbsolutePointFromRelativePoint:[end position]];
+}
+
+- (void)onTouchStart:(UITouch *)touch atPoint:(CGPoint)point
+{
+    [super onTouchStart:touch atPoint:point];
+    self.isSelected = !self.isSelected;
 }
 
 @end
