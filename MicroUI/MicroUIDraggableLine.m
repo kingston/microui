@@ -24,6 +24,7 @@
         [self addSubView:start];
         end = [[MicroUIDraggableEndpoint alloc] initWithCoordinates:CGPointMake(0,0)];
         end.radius = ENDPOINT_RADIUS;
+        end.color = GLKVector4Make(1, 1, 1, 1);
         end.delegate = self;
         [self addSubView:end];
     }
@@ -46,15 +47,40 @@
     [end setPosition:relativePt];
 }
 
+- (float)squareOfNumber:(float)x
+{
+    return (x * x);
+}
+
+- (float)distanceBetweenPoint:(CGPoint)v AndPoint:(CGPoint)w
+{
+    return ([self squareOfNumber:(v.x - w.x)] + [self squareOfNumber:(v.y - w.y)]);
+    //return (sqr(v.x - w.x) + sqr(v.y - w.y));
+}
+
+- (float)distanceFromSegmentToPoint:(CGPoint)testPoint
+{
+    float l2 = [self distanceBetweenPoint:startPoint AndPoint:endPoint];
+    if (l2 == 0.0) return [self distanceBetweenPoint:testPoint AndPoint:startPoint];
+    float t = ((testPoint.x - startPoint.x) * (endPoint.x - startPoint.x) + (testPoint.y - startPoint.y) * (endPoint.y - startPoint.y)) / l2;
+    if (t < 0) return [self distanceBetweenPoint:testPoint AndPoint:startPoint];
+    if (t > 1) return [self distanceBetweenPoint:testPoint AndPoint:endPoint];
+    CGPoint projection = CGPointMake(startPoint.x + t * (endPoint.x - startPoint.x), startPoint.y + t * (endPoint.y - startPoint.y));
+    return [self distanceBetweenPoint:testPoint AndPoint:projection];
+}
+
 - (BOOL)hitTestForPoint:(CGPoint)point
 {
     // TODO: Write the algorithm - found here: http://stackoverflow.com/questions/849211/shortest-distance-between-a-point-and-a-line-segment
-    float xmin = fminf(startPoint.x, endPoint.x) - ENDPOINT_RADIUS;
-    float xmax = fmaxf(startPoint.x, endPoint.x) + ENDPOINT_RADIUS;
-    float ymin = fminf(startPoint.y, endPoint.y) - ENDPOINT_RADIUS;
-    float ymax = fmaxf(startPoint.y, endPoint.y) + ENDPOINT_RADIUS;
+//    float xmin = fminf(startPoint.x, endPoint.x) - ENDPOINT_RADIUS;
+//    float xmax = fmaxf(startPoint.x, endPoint.x) + ENDPOINT_RADIUS;
+//    float ymin = fminf(startPoint.y, endPoint.y) - ENDPOINT_RADIUS;
+//    float ymax = fmaxf(startPoint.y, endPoint.y) + ENDPOINT_RADIUS;
+//    
+//    return (xmin < point.x && point.x < xmax && ymin < point.y && point.y < ymax);
     
-    return (xmin < point.x && point.x < xmax && ymin < point.y && point.y < ymax);
+    NSLog(@"%f", [self distanceFromSegmentToPoint:point]);
+    return [self distanceFromSegmentToPoint:point] <= 50;
 }
 
 //
@@ -86,17 +112,12 @@
 
 - (void)renderToShape:(GLShape *)shape
 {
-    GLQuad *quad = [[GLQuad alloc] init];
-    
-    quad.useConstantColor = TRUE;
-    quad.color = GLKVector4Make(1.0, 0, 0, 1);
-    CGPoint relativeStart = [self getRelativePointFromAbsolutePoint:startPoint];
-    CGPoint relativeEnd = [self getRelativePointFromAbsolutePoint:endPoint];
-    quad.vertices[0] = GLKVector2Make(relativeStart.x, relativeStart.y + ENDPOINT_RADIUS);
-    quad.vertices[1] = GLKVector2Make(relativeStart.x, relativeStart.y - ENDPOINT_RADIUS);
-    quad.vertices[2] = GLKVector2Make(relativeEnd.x, relativeEnd.y - ENDPOINT_RADIUS);
-    quad.vertices[3] = GLKVector2Make(relativeEnd.x, relativeEnd.y + ENDPOINT_RADIUS);
-    [shape addChild:quad];
+    GLLine *line = [[GLLine alloc] init];
+    line.useConstantColor = YES;
+    line.color = self.color;
+    line.start = [self getRelativePointFromAbsolutePoint:self.startPoint];
+    line.end = [self getRelativePointFromAbsolutePoint:self.endPoint];
+    [shape addChild:line];
 }
 
 - (void)onDragMove:(CGPoint)point withSender:(GLView *)sender
@@ -110,16 +131,6 @@
     // Update start/end point if we get dragged
     startPoint = [self getAbsolutePointFromRelativePoint:[start position]];
     endPoint = [self getAbsolutePointFromRelativePoint:[end position]];
-}
-
-- (void)renderToShape:(GLShape *)shape
-{
-    GLLine *line = [[GLLine alloc] init];
-    line.start = self.startPoint;
-    line.end = self.endPoint;
-    line.color = self.color;
-    line.useConstantColor = YES;
-    [shape addChild:line];
 }
 
 @end

@@ -56,7 +56,8 @@
 - (void)onTouchEnd:(UITouch *)touch atPoint:(CGPoint)point
 {
     rect.color = normalColor;
-    //exit(0);
+    //Does this work? I can't tell becuase I can't see the button :(
+    exit(0);
 }
 
 @synthesize activeColor, normalColor, leftColor, buttonText;
