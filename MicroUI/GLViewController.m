@@ -116,11 +116,11 @@
         [targettedView onTouchStart:touch atPoint:pt];
         if (targettedView != nil) {
             NSLog(@"Detected start of a touch for %@", targettedView);
+            
+            // Store touch
+            NSValue *key = [NSValue valueWithNonretainedObject:touch];
+            [liveTouches setObject:targettedView forKey:key];
         }
-        
-        // Store touch
-        NSValue *key = [NSValue valueWithNonretainedObject:touch];
-        [liveTouches setObject:targettedView forKey:key];
     }
 }
 
